@@ -23,7 +23,12 @@ Polyglot usage is explained in this [section]({{< ref "/polyglot" >}}).
 Yatta language is currently in active development. The release plan is:
 * [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
-* final version - 2021
+* version 1 - final - 2021
+
+# Contributors
+
+* [Adam Kovari](https://github.com/akovari)
+* [Fedor Gavrilov](https://github.com/kurobako)
 
 # Getting Started
 Follow instructions on [Github](https://github.com/yatta-lang/yatta).
