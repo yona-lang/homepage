@@ -1,0 +1,8 @@
+baseURL = "https://yatta-lang.org/"
+languageCode = "en-us"
+title = "Yatta"
+theme="archie"
+googleAnalytics = "UA-1855461-3"
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
