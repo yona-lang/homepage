@@ -53,7 +53,7 @@ Yatta allows using module call operator `::` to be used to call object methods a
 ### Calling static methods in Java
 Static methods may be called just as easily from Yatta:
 
-    java\util\Collections::singletonList 5
+    (java\util\Collections::singletonList 5)::get (java\Types::to_int 0)
 
 Java static methods can be easily called from Yatta, as if it were a Yatta module/function.
 
@@ -73,7 +73,6 @@ The example above shows how to throw and catch Java exceptions in Yatta code.
 
 ## Limitations of Polyglot APIs and other notes
 * Java interop is implemented via Java reflection. This may be an issue when using native image built version of Yatta interpreter.
-* Another consequence of Java interop being implemented via reflection is that when an instance is created using a static method, such as `java.util.Collections.singletonList`, the actual underlying class would be `java.util.Collections$SingletonList` and not a `java.util.List`. This results in a `java.lang.IllegalAccessException` exception if trying to invoke a method of `java.util.List` on such instance. Therefore, one must be careful to understand the limitations of Java reflection APIs.
 * Currying on Java static function/method calls works with the same semantics as for Yatta functions. Therefore, one may create a curried Java method simply by not passing all the necessary arguments to method calls.
 * Java methods are resolved by names only. Since Yatta is a dynamically typed language, Yatta simply doesn't have the knowledge to determine the correct method otherwise. It cannot even utilize the number of arguments, because the method call may be curried. Therefore it picks the first method of the given name and tries to use that.
 * Exceptions related to Polyglot APIs in Yatta have a symbol of `:polyglot`.
