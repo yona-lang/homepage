@@ -9,7 +9,8 @@ Yatta provides following functions and modules as part of the standard library.
 
 # Functions
 * `println <value>` - Prints a value to the standard output
-* `sleep <milis>` - Suspends computation by `<milis>` miliseconds
+* `sleep <time unit tuple>` - Suspends computation by `<time unit tuple>`
+* `timeout <time unit tuple> <value>` - Either the `<value>` is computed by the specified timeout, or a `:timeout` exception is raised
 * `async <0-arg lambda>` - Executes the lambda asynchronously
 * `identity <value>` - Returns the value provided to it as an argument, without any modification
 * `str <value>` - Converts any value to its string representation
@@ -20,6 +21,7 @@ Yatta provides following functions and modules as part of the standard library.
 * `never` - Function that is never completed
 * `read` - Reads a single character from standard input
 * `readln` - Reads a line from the standard input
+
 
 # Modules
 * Types - contains functions for checking a type of a value
