@@ -10,17 +10,17 @@ tldr: Yatta is a modern take on a dynamic general-purpose programming language w
 **Chat**: [gitter](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
-Yatta is a minimalistic, opiniated, (strongly) dynamically typed, strict, functional programming language, with ML-like syntax, for [GraalVM](https://www.graalvm.org/) polyglot virtual machine (VM). Yatta puts a strong focus on readability of the code.
+Yatta is a minimalistic, opiniated, (strongly) dynamically typed, strict, functional programming language, with ML-like syntax, for the [GraalVM](https://www.graalvm.org/) polyglot virtual machine (VM). Yatta puts a strong focus on code readability.
 
 Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
 
 # Documentation
-Please see documentation Yatta's regarding the [standard library]({{< ref "/stdlib/overview" >}}). Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree/master/language/tests).
+Please see Yatta's documentation regarding the [standard library]({{< ref "/stdlib/overview" >}}). Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree/master/language/tests).
 
 Polyglot usage is explained in this [section]({{< ref "/polyglot" >}}).
 
 # Status
-Yatta language is currently in active development. The release plan is:
+The Yatta language is currently in active development. The release plan is:
 * [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
 * version 1 - final - 2021
