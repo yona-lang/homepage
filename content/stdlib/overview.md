@@ -16,7 +16,6 @@ Yatta provides following functions and modules as part of the standard library.
 * `str <value>` - Converts any value to its string representation
 * `int <value>` - Converts any number to to int
 * `float <value>` - Converts any value to float
-* `system <seq of args>` - Executes a system command, arguments can be passed as additional elements of the sequence
 * `eval <string>` - Dynamically evaluates the string as a Yatta expression
 * `never` - Function that is never completed
 * `read` - Reads a single character from standard input
@@ -37,3 +36,4 @@ Yatta provides following functions and modules as part of the standard library.
 * [http\Client]({{< ref "http/client" >}}) - simple HTTP client
 * [http\Server]({{< ref "http/server" >}}) Java - Java interop functions
 * java\Types - Java types conversions
+* System - execute external system programs

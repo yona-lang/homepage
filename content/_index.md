@@ -29,6 +29,7 @@ The Yatta language is currently in active development. The release plan is:
 
 * [Adam Kovari](https://github.com/akovari)
 * [Fedor Gavrilov](https://github.com/kurobako)
+* [Daniele Consoli](https://github.com/ktzee)
 
 # Getting Started
 Follow instructions on [Github](https://github.com/yatta-lang/yatta).
