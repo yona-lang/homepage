@@ -2,7 +2,6 @@
 First install [hugo](https://gohugo.io/). Then:
 
     mkdir themes
-    cd themes
     git submodule add https://github.com/athul/archie.git themes/archie
     git submodule add -b master git@github.com:yatta-lang/yatta-lang.github.io.git public
 
