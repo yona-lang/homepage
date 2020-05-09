@@ -11,29 +11,41 @@ Yatta is a minimalistic, opiniated, (strongly) dynamically typed, strict, functi
 
 Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
 
-# Documentation
+## Goals & Priorities
+- **Excellent readability** - simple syntax, few keywords, virtually no boilerplate.
+- **Few types of expressions** - `module`, `import`, function(function does not need a keyword, it is defined by a name and arguments - patterns), `case`, `if`, `let`, `do` and `try`/`catch` + `raise`.
+- **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. Modules are first level values and can be created dynamically.
+- **Single expression principle** - program is always one expression - this enables simpler evaluation and syntax, allows writing simple scripts as well as complex applications.
+- **Powerful and efficient** built-in data structures with full support for pattern matching, including Sequence, Dictionary and Set.
+- Custom data types representable as **records**.
+- Built-in runtime level **non-blocking asynchronous IO**.
+- **Simple concurrency**, built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
+- **Advanced concurrency** provided by built-in **Software Transactional Memory** (STM) module.
+- **Polyglot language** - interoperability with other languages via GraalVM.
+
+## Documentation
 Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [documentation]({{< ref "/docs" >}}) section.
 
 To get quickly started, please follow the installation [instructions]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
 
-# Status
+## Status
 The Yatta language is currently in active development. The release plan is:
 * [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
 * version 1 - final - 2021
 
-# Contributors
+## Contributors
 
 * [Adam Kovari](https://github.com/akovari)
 * [Fedor Gavrilov](https://github.com/kurobako)
 * [Daniele Consoli](https://github.com/ktzee)
 
-# Getting Started
+## Getting Started
 Follow instructions on [Github](https://github.com/yatta-lang/yatta).
 
-# Examples
+## Examples
 
-## Distributed calculation of PI using builtin HTTP Server and Client
+### Distributed calculation of PI using builtin HTTP Server and Client
 
     do
         port = 3000
@@ -49,7 +61,7 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
             end
 
         client_session = http\Client::session {}
-        client_module = module Client exports run as
+        client = module Client exports run as
             send_request i = do
                     (200, _, raw_body) = http\Client::post client_session "http://localhost:{port}/iteration" {} <| JSON::generate {"i" = i}
                     {"result" = result} = JSON::parse raw_body
@@ -62,10 +74,10 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
             | true = run (i + 1) (acc + (send_request <| float i))
         end
 
-        4f * client_module::run 1 0f
+        4f * client::run 1 0f
     end
 
-## Interoperability with Java
+### Interoperability with Java
 
     let
         big_integer = Java::type "java.math.BigInteger"
