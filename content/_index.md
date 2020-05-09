@@ -7,17 +7,14 @@ tldr: Yatta is a modern take on a dynamic general-purpose programming language w
 
 **Mailing list**: yatta-lang@googlegroups.com
 
-**Chat**: [gitter](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-
 Yatta is a minimalistic, opiniated, (strongly) dynamically typed, strict, functional programming language, with ML-like syntax, for the [GraalVM](https://www.graalvm.org/) polyglot virtual machine (VM). Yatta puts a strong focus on code readability.
 
 Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
 
 # Documentation
-Please see Yatta's documentation regarding the [standard library]({{< ref "/stdlib/overview" >}}). Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree/master/language/tests).
+Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [documentation]({{< ref "/docs" >}}) section.
 
-Polyglot usage is explained in this [section]({{< ref "/polyglot" >}}).
+To get quickly started, please follow the installation [instructions]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
 
 # Status
 The Yatta language is currently in active development. The release plan is:
@@ -46,9 +43,9 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
                 in (200, {"content-type" = "application/json"}, JSON::generate {"result" = (-1f ** (i + 1f)) / ((2f * i) - 1f)})
 
                 max_connections = 100
-                server = http\Server::create "127.0.0.1" port max_connections
-                    |> http\Server::handle "/iteration" iteration_handler
-                    |> http\Server::start
+                http\Server::create "127.0.0.1" port max_connections
+                |> http\Server::handle "/iteration" iteration_handler
+                |> http\Server::start
             end
 
         client_session = http\Client::session {}
