@@ -47,6 +47,7 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
 
 ### Distributed calculation of PI using builtin HTTP Server and Client
 
+```haskell
     do
         port = 3000
         server = do
@@ -76,12 +77,15 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
 
         4f * client::run 1 0f
     end
+```
 
 ### Interoperability with Java
 
+```haskell
     let
         big_integer = Java::type "java.math.BigInteger"
         big_two = Java::new big_integer ["2"]
         big_three = Java::new big_integer ["3"]
         result = big_two::multiply big_three  # calling a method `multiply` on object of type BigInteger.
     in result::longValue
+```
