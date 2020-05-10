@@ -18,7 +18,7 @@ This approach has provides several benefits to languages that provide these feat
 The example below shows a simple program that reads line from two different files and writes a combined line to the third line. The execution order is as follows:
 
 1. Read line from file 1, at the same time, read line from file 2
-2. After both lines have been read, write file to file 3 and return it as a result of the \verb|let| expression
+2. After both lines have been read, write file to file 3 and return it as a result of the `let` expression
 
 The important point of this rather simple example is to demonstrate how easy it is to write asynchronous concurrent code in Yatta.
 
