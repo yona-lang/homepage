@@ -34,12 +34,6 @@ The Yatta language is currently in active development. The release plan is:
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
 * version 1 - final - 2021
 
-## Contributors
-
-* [Adam Kovari](https://github.com/akovari)
-* [Fedor Gavrilov](https://github.com/kurobako)
-* [Daniele Consoli](https://github.com/ktzee)
-
 ## Getting Started
 Follow instructions on [Github](https://github.com/yatta-lang/yatta).
 
@@ -89,3 +83,10 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
         result = big_two::multiply big_three  # calling a method `multiply` on object of type BigInteger.
     in result::longValue
 ```
+
+## Contributors
+
+* [Adam Kovari](https://github.com/akovari)
+* [Fedor Gavrilov](https://github.com/kurobako)
+* [Daniele Consoli](https://github.com/ktzee)
+* [You](mailto:yatta-lang@googlegroups.com)

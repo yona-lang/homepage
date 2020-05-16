@@ -27,7 +27,7 @@ Yatta provides following functions and modules as part of the standard library.
 * Seq - contains functions for manipulating sequences
 * Set - contains functions for manipulating sets
 * Dict - contains functions for manipulating dictionaries
-* File - contains functions for manipulating files
+* [File]({{< ref "file" >}}) - contains functions for manipulating files
 * Transducers - contains reducer transformers, used for example by generators
 * Time - contains functions for reading current time
 * JSON - JSON parser and generator functions
