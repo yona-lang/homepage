@@ -42,46 +42,46 @@ Follow instructions on [Github](https://github.com/yatta-lang/yatta).
 ### Distributed calculation of PI using builtin HTTP Server and Client
 
 ```haskell
-    do
-        port = 3000
-        server = do
-                iteration_handler = \params headers raw_body -> let
-                    {"i" = i} = JSON::parse raw_body
-                in (200, {"content-type" = "application/json"}, JSON::generate {"result" = (-1f ** (i + 1f)) / ((2f * i) - 1f)})
+do
+    port = 3000
+    server = do
+            iteration_handler = \params headers raw_body -> let
+                {"i" = i} = JSON::parse raw_body
+            in (200, {"content-type" = "application/json"}, JSON::generate {"result" = (-1f ** (i + 1f)) / ((2f * i) - 1f)})
 
-                max_connections = 100
-                http\Server::create "127.0.0.1" port max_connections
-                |> http\Server::handle "/iteration" iteration_handler
-                |> http\Server::start
-            end
-
-        client_session = http\Client::session {}
-        client = module Client exports run as
-            send_request i = do
-                    (200, _, raw_body) = http\Client::post client_session "http://localhost:{port}/iteration" {} <| JSON::generate {"i" = i}
-                    {"result" = result} = JSON::parse raw_body
-                    result
-                end
-
-            max_iterations = 1000
-            run i acc
-            | i >= max_iterations = acc
-            | true = run (i + 1) (acc + (send_request <| float i))
+            max_connections = 100
+            http\Server::create "127.0.0.1" port max_connections
+            |> http\Server::handle "/iteration" iteration_handler
+            |> http\Server::start
         end
 
-        4f * client::run 1 0f
+    client_session = http\Client::session {}
+    client = module Client exports run as
+        send_request i = do
+                (200, _, raw_body) = http\Client::post client_session "http://localhost:{port}/iteration" {} <| JSON::generate {"i" = i}
+                {"result" = result} = JSON::parse raw_body
+                result
+            end
+
+        max_iterations = 1000
+        run i acc
+        | i >= max_iterations = acc
+        | true = run (i + 1) (acc + (send_request <| float i))
     end
+
+    4f * client::run 1 0f
+end
 ```
 
 ### Interoperability with Java
 
 ```haskell
-    let
-        big_integer = Java::type "java.math.BigInteger"
-        big_two = Java::new big_integer ["2"]
-        big_three = Java::new big_integer ["3"]
-        result = big_two::multiply big_three  # calling a method `multiply` on object of type BigInteger.
-    in result::longValue
+let
+    big_integer = Java::type "java.math.BigInteger"
+    big_two = Java::new big_integer ["2"]
+    big_three = Java::new big_integer ["3"]
+    result = big_two::multiply big_three  # calling a method `multiply` on object of type BigInteger.
+in result::longValue
 ```
 
 ## Contributors
