@@ -21,12 +21,12 @@ Yatta provides following functions and modules as part of the standard library.
 
 
 # Modules
-* Types - contains functions for checking a type of a value
-* Seq - contains functions for manipulating sequences
-* Set - contains functions for manipulating sets
-* Dict - contains functions for manipulating dictionaries
+* [Types]({{< ref "types" >}}) - contains functions for checking a type of a value
+* [Seq]({{< ref "seq" >}}) - contains functions for manipulating sequences
+* [Set]({{< ref "set" >}}) - contains functions for manipulating sets
+* [Dict]({{< ref "dict" >}}) - contains functions for manipulating dictionaries
 * [File]({{< ref "file" >}}) - contains functions for manipulating files
-* Transducers - contains reducer transformers, used for example by generators
+* [Transducers]({{< ref "transducers" >}}) - contains reducer transformers, used for example by generators
 * Time - contains functions for reading current time
 * JSON - JSON parser and generator functions
 * STM - Software Transactional Memory
