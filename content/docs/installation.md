@@ -2,6 +2,9 @@
 title: "Installation"
 ---
 
+## Requirements
+* GraalVM **20.0.0**.
+
 ## Installation Instructions
 It is possible to run Yatta locally, whether for play purposes or development of new features.
 
@@ -34,14 +37,20 @@ Optionally, if no file is provided, the interpreter will expect an input on the 
 These instructions are for setting up a local development environment. Currently Debian 10 is the only verified platform (though, any Linux that runs GraalVM should in theory work).
 
 ### Build requirements - Debian
-    sudo apt install build-essential zlib1g zlib1g-dev 
+```bash
+sudo apt install build-essential zlib1g zlib1g-dev 
+```
 
 ### Download and install Maven
-    Download Maven from their [site](https://maven.apache.org/download.cgi). Then unpack it somewhere and make sure maven/bin path is added to `$PATH`.
+Download Maven from their [site](https://maven.apache.org/download.cgi). Then unpack it somewhere and make sure maven/bin path is added to `$PATH`.
 
 ### Getting GraalVM
-    mvn package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+```bash
+mvn package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+```
 
 ### Running Yatta
 After cloning the repository, Yatta interpreter can be run simply by:
-    ./yatta <filename.yatta>
+```bash
+./yatta <filename.yatta>
+```
