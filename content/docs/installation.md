@@ -16,7 +16,7 @@ gu install native-image
 ```
 
 ### Setup Yatta Component
-Download yatta-component.jar. Then run:
+Download yatta-component.jar from the [releases](https://github.com/yatta-lang/yatta/releases) section. Then run:
 
 ```bash
 gu install -L yatta-component.jar
