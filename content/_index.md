@@ -1,7 +1,5 @@
 ---
 title: "yatta-lang"
-date: 2020-04-25T18:32:16+02:00
-draft: false
 tldr: Yatta is a modern take on a dynamic general-purpose programming language with advanced functional programming, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
@@ -16,7 +14,7 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 - **Few types of expressions** - `module`, `import`, function(function does not need a keyword, it is defined by a name and arguments - patterns), `case`, `if`, `let`, `do` and `try`/`catch` + `raise`.
 - **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. Modules are first level values and can be created dynamically.
 - **Single expression principle** - program is always one expression - this enables simpler evaluation and syntax, allows writing simple scripts as well as complex applications.
-- **Powerful and efficient** built-in data structures with full support for pattern matching, including Sequence, Dictionary and Set.
+- **Powerful and efficient** built-in **immutable** data structures with full support for **pattern matching**, including Sequence, Dictionary and Set.
 - Custom data types representable as **records**.
 - Built-in runtime level **non-blocking asynchronous IO**.
 - **Simple concurrency**, built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
@@ -33,6 +31,8 @@ The Yatta language is currently in active development. The release plan is:
 * [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
 * version 1 - final - 2021
+
+See [Release Notes]({{< ref "docs/release-notes" >}}) for more details.
 
 ## Getting Started
 Follow instructions on [Github](https://github.com/yatta-lang/yatta).

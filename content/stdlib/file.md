@@ -68,6 +68,13 @@ It can be useful to obtain a path from a file handle, for example when working w
 path = File::path fh
 ```
 
+### Listing files in a directory
+To list files in a directory, use function `list_dir`. Note that this function does not recurse over nested subfolders.
+
+```haskell
+files = File::list_dir "./"
+```
+
 ### Reading file - line mode
 File can be read either as a whole, or in lines (provided that it is a text file).
 

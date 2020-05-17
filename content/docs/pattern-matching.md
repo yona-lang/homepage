@@ -1,6 +1,5 @@
 ---
 title: "Pattern Matching"
-draft: false
 ---
 
 Pattern matching is the most important feature for control flow in Yatta. It allows simple, short way of specifying patterns for the built in types, specifically:

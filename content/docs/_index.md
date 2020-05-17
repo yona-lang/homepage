@@ -1,14 +1,13 @@
 ---
 title: "Documentation"
-draft: false
 ---
 
-To get started with yatta, follow installation [instructions]({{< ref "installation" >}}). Following sections explain language features, syntax, semantics and evaluation model.
+To get started with yatta, follow **[installation instructions]({{< ref "installation" >}})**. Following sections explain language features, syntax, semantics and evaluation model.
 
-Yatta provides a standard library which is documented in the [standard library]({{< ref "/stdlib/overview" >}}) section.
+Yatta provides a standard library which is documented in the **[standard library]({{< ref "/stdlib/overview" >}})** section.
 Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree/master/language/tests).
 
-Polyglot usage is explained in this [section]({{< ref "/polyglot" >}}).
+Yatta takes advantage of the **[polyglot]({{< ref "/polyglot" >}})** features of GraalVM and allows being used in combination with other languages on this platform, including Java.
 
 ## Execution Model and asynchronous non-blocking IO & Concurrency
 Yatta provides fully transparent runtime system that integrates asynchronous non-blocking IO features with concurrent execution of the code. This means, there is no special syntax or special data types representing asynchronous computations. Everything related to non-blocking IO is hidden within the runtime and exposed via the standard library, and all expressions consisting of asynchronous expressions(Asynchronous expression is usually obtained from the standard library or created by function `async`) are evaluated in asynchronous, non-blocking matter.

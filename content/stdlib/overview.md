@@ -1,25 +1,23 @@
 ---
 title: "Standard Library"
-date: 2020-04-25T18:32:16+02:00
-draft: false
 tags: stdlib
 ---
 
 Yatta provides following functions and modules as part of the standard library.
 
 # Functions
-* `println <value>` - Prints a value to the standard output
-* `sleep <time unit tuple>` - Suspends computation by `<time unit tuple>`
-* `timeout <time unit tuple> <value>` - Either the `<value>` is computed by the specified timeout, or a `:timeout` exception is raised
-* `async <0-arg lambda>` - Executes the lambda asynchronously
-* `identity <value>` - Returns the value provided to it as an argument, without any modification
-* `str <value>` - Converts any value to its string representation
-* `int <value>` - Converts any number to to int
-* `float <value>` - Converts any value to float
-* `eval <string>` - Dynamically evaluates the string as a Yatta expression
-* `never` - Function that is never completed
-* `read` - Reads a single character from standard input
-* `readln` - Reads a line from the standard input
+* [println]({{< ref "functions/println" >}}) - Prints a value to the standard output
+* [sleep]({{< ref "functions/sleep" >}}) - Suspends computation by specified duration
+* [timeout]({{< ref "functions/timeout" >}}) - Either the provided value is computed by the specified timeout, or a `:timeout` exception is raised
+* [async]({{< ref "functions/async" >}}) - Executes the lambda asynchronously
+* [identity]({{< ref "functions/identity" >}}) - Returns the value provided to it as an argument, without any modification
+* [str]({{< ref "functions/str" >}}) - Converts any value to its string representation
+* [int]({{< ref "functions/int" >}}) - Converts any number to to int
+* [float]({{< ref "functions/float" >}}) - Converts any value to float
+* [eval]({{< ref "functions/eval" >}}) - Dynamically evaluates the string as a Yatta expression
+* [never]({{< ref "functions/never" >}}) - Function that is never completed
+* [read]({{< ref "functions/read" >}}) - Reads a single character from standard input
+* [readln]({{< ref "functions/readln" >}}) - Reads a line from the standard input
 
 
 # Modules

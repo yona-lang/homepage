@@ -1,6 +1,5 @@
 ---
 title: "Syntax"
-draft: false
 ---
 
 Program in Yatta consists always of evaluation of a single expression. In fact, any Yatta program consist of exactly one expression.

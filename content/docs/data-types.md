@@ -1,6 +1,5 @@
 ---
 title: "Data Types"
-draft: false
 ---
 
 Yatta is dynamically typed language, meaning that types are checked during runtime. Values in Yatta are represented using following data types:
@@ -18,5 +17,5 @@ Yatta is dynamically typed language, meaning that types are checked during runti
 * dictionary - in curly braces: `{:one = 1, :two = 2}`
 * set - in curly braces: `{1, 2, 3}`
 * anonymous function(lambda): `\first_arg second_arg -> first_arg + second_arg`
-* unit: `()`
+* unit, or `()` - representing no value
 * native object: underlying Java object that is used by some stdlib functions, such as File descriptor
