@@ -24,7 +24,7 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 ## Documentation
 Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [documentation]({{< ref "/docs" >}}) section.
 
-To get quickly started, please follow the installation [instructions]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
+To get **quickly started**, please follow the installation [instructions]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
 
 ## Status
 The Yatta language is currently in active development. The release plan is:
@@ -32,10 +32,7 @@ The Yatta language is currently in active development. The release plan is:
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
 * version 1 - final - 2021
 
-See [Release Notes]({{< ref "docs/release-notes" >}}) for more details.
-
-## Getting Started
-Follow instructions on [Github](https://github.com/yatta-lang/yatta).
+See the [release notes]({{< ref "docs/release-notes" >}}) for more details.
 
 ## Examples
 
