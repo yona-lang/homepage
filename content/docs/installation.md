@@ -3,7 +3,8 @@ title: "Installation"
 ---
 
 ## Requirements
-* GraalVM **20.0.0**.
+* GraalVM **20.0.0**
+* Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 
 ## Installation Instructions
 It is possible to run Yatta locally, whether for play purposes or development of new features.
@@ -32,6 +33,14 @@ Yatta comes as a GraalVM component, with two executables:
 
 Both executables currently accept only a filename as an argument. This file is then executed using the interpreter.
 Optionally, if no file is provided, the interpreter will expect an input on the standard input when ran. Ctrl-D marks the end of the input in this case.
+
+### Interpreter logging
+Logging can be enabled to debug certain types of issues, for example related to module loading. To do so, make sure your interpreter(either `yatta` or `yattanative`) is ran with:
+```bash
+yatta --log.yatta.yatta.runtime.Context.level=CONFIG
+```
+
+or additionally you can try increasing the log level all the way down to `FINE`, `FINER` or even `FINEST`.
 
 ## Local development setup
 These instructions are for setting up a local development environment. Currently Debian 10 is the only verified platform (though, any Linux that runs GraalVM should in theory work).
