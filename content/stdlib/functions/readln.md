@@ -1,5 +1,5 @@
 ---
-title: "Reading standard input - one line"
+title: "readln"
 tags: stdlib
 ---
 

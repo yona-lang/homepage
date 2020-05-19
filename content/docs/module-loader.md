@@ -1,6 +1,5 @@
 ---
 title: "Module Loader"
-tags: stdlib
 ---
 
 Yatta's module loader is very simple and respects environmental variable `YATTA_PATH`. If this variable is not set, then current working directory is used as a base directory for loading modules. Multiple paths may be separated with a default platform path separator: `:` on UNIX and `;` on Windows.

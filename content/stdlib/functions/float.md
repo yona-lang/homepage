@@ -1,11 +1,11 @@
 ---
-title: "Conversion to float"
+title: "float"
 tags: stdlib
 ---
 
 Function `float` converts provided argument to a floating point number.
 
-Usage:
+## Usage
 
 ```haskell
 float "5.0"

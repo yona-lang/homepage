@@ -1,12 +1,11 @@
 ---
-title: "Identity function"
+title: "identity"
 tags: stdlib
 ---
 
 Function `identity` returns whatever value passed to it without any side-effects.
 
-Usage:
-
+## Usage
 ```haskell
 value = identity value
 ```

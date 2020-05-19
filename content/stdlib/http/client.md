@@ -1,11 +1,11 @@
 ---
-title: "Simple HTTP Client"
+title: "http\\Client"
 tags: stdlib
 ---
 
 This module provides a simple HTTP Client built on top of [java.net.http.HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html).
-## Usage
 
+## Usage
 First you need to create an HTTP session instance, that takes a dictionary with optional settings, such as whether redirects should be followed or an HTTP authentication should be used. This session instance is then used to make HTTP requests.
 
 Example:

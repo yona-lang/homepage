@@ -17,7 +17,7 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 - **Powerful and efficient** built-in **immutable** data structures with full support for **pattern matching**, including Sequence, Dictionary and Set.
 - Custom data types representable as **records**.
 - Built-in runtime level **non-blocking asynchronous IO**.
-- **Simple concurrency**, built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
+- [**Simple concurrency**]({{< relref "docs#execution-model" >}}), built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
 - **Advanced concurrency** provided by built-in **Software Transactional Memory** (STM) module.
 - **Polyglot language** - interoperability with other languages via GraalVM.
 

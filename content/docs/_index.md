@@ -9,11 +9,12 @@ Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree
 
 Yatta takes advantage of the **[polyglot]({{< ref "/polyglot" >}})** features of GraalVM and allows being used in combination with other languages on this platform, including Java.
 
-## Execution Model and asynchronous non-blocking IO & Concurrency
-Yatta provides fully transparent runtime system that integrates asynchronous non-blocking IO features with concurrent execution of the code. This means, there is no special syntax or special data types representing asynchronous computations. Everything related to non-blocking IO is hidden within the runtime and exposed via the standard library, and all expressions consisting of asynchronous expressions(Asynchronous expression is usually obtained from the standard library or created by function `async`) are evaluated in asynchronous, non-blocking matter.
+## Execution Model
+Yatta provides fully transparent runtime system that integrates asynchronous non-blocking IO features with concurrent execution of the code. This means, there is no special syntax or special data types representing asynchronous computations. Everything related to non-blocking IO is hidden within the runtime and exposed via the standard library, and all expressions consisting of asynchronous expressions(an asynchronous expression is usually obtained from the standard library or created by function `async`) are evaluated in asynchronous, non-blocking matter.
 
-This approach has provides several benefits to languages that provide these features via libaries, mainly that such library would have to be adopted by other libraries/frameworks in order to be usable and it would still impose additional boilerplate simply because libraries cannot typically change language syntax/semantics. This is why Yatta provides these features from day one, built into language syntax and semantics and therefore it is always available to any program without any external dependencies. At the same time, putting these features directly on the language/runtime level allows for additional optimizations that could otherwise be tricky or impossible.
+This approach provides several benefits to languages as opposed to having these features provided via external libaries, mainly that such library would have to be adopted by other libraries/frameworks in order to be usable and it would still impose additional boilerplate simply because libraries cannot typically change language syntax/semantics. This is why Yatta provides these features from day one, built into language syntax and semantics and therefore it is always available to any program without any external dependencies. At the same time, putting these features directly on the language/runtime level allows for additional optimizations that could otherwise be tricky or impossible.
 
+### Simple example
 The example below shows a simple program that reads line from two different files and writes a combined line to the third line. The execution order is as follows:
 
 1. Read line from file 1, at the same time, read line from file 2
@@ -26,11 +27,12 @@ let
     (:ok, line1) = File::read_line f1
     (:ok, line2) = File::read_line f2
 in
-    File::write_line f3 (line1 ++ line2)
+    File::write f3 (line1 ++ line2)
 ```
 
 This allows programmers to focus on expressing concurrent programs much more easily and not having to deal with the details of the actual execution order. Additionally, when code must be executed sequentially, without explicit dependencies, a special expression `do` is available.
 
+### Implementation
 In terms of implementation, the runtime system of Yatta can be viewed in terms of promise pipelineing or call-streams. The difference is that this pipelining and promise abstraction as such is completely transparent to the programmer and exists solely on the runtime level.
 
 ## Evaluation

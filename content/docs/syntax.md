@@ -339,7 +339,7 @@ The syntax for a generator generating a dictionary:
 {key = val * 2 | key = val <- {:a = 1, :b = 2, :c = 3} if val % 2 == 0}  # generator with a condition, so the result is {:b = 4}
 ```
 
-Generators are an easy an conveniet way to transform built-in collections. They are, however, themselves implemented using reusable [Transducers](language/lib-yatta/Transducers.yatta) module, for example a set generator without using the above mentioned syntax "sugar" could look like:
+Generators are an easy an conveniet way to transform built-in collections. They are, however, themselves implemented using reusable [Transducers]({{< ref "stdlib/transducers" >}}) module, for example a set generator without using the above mentioned syntax "sugar" could look like:
 
 ```haskell
 Transducers::filter \val -> val < 0 (\-> 0, \acc val -> acc + val, \acc -> acc * 2)

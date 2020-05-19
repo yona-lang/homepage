@@ -1,5 +1,5 @@
 ---
-title: "Reading standard input - one character"
+title: "read"
 tags: stdlib
 ---
 
