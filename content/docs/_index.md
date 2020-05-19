@@ -46,3 +46,6 @@ See [syntax]({{< ref "syntax" >}}) guide.
 
 ## Pattern Matching
 See [pattern matching]({{< ref "pattern-matching" >}}) guide.
+
+## Module Loading
+See [module loader]({{< ref "module-loader" >}}) page for more details about module loading.

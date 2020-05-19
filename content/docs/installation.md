@@ -3,6 +3,7 @@ title: "Installation"
 ---
 
 ## Requirements
+* Any OS capable of running GraalVM
 * GraalVM **20.0.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 

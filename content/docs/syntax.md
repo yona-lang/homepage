@@ -164,7 +164,7 @@ else
 Both `then` and `else` parts must be defined. The expression after `if` must evaluate to a boolean value. Empty sequence, dictionary or similar will not work! New lines are allowed, but not required.
 
 ## **module expression**
-`module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - then the file must take name of the module + `.yatta` suffix.
+`module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - then the file must take name of the module + `.yatta` suffix. Also, se section about [module loader]({{< ref "module-loader" >}}) for details regarding loading modules.
 
 ```haskell
 module package\DemoMmodule 
@@ -258,6 +258,8 @@ in
 ```
 
 Note that importing functions from multiple modules is possibly, they just have to be put on new lines. Functions can be renamed using the `as` keyword.
+
+See section about [module loader]({{< ref "module-loader" >}}) for details regarding loading modules.
 
 ## **`raise`, `try`/`catch` expressions**: raising and catching exceptions
 Yatta is not a pure language, therefore it allows raising exceptions. Exceptions in Yatta are represented as a tuple of a symbol and a message. Message can be empty, if not provided as an argument to the keyword/function `raise`.
