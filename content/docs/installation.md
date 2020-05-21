@@ -4,7 +4,7 @@ title: "Installation"
 
 ## Requirements
 * Any OS capable of running GraalVM
-* GraalVM **20.0.0**
+* GraalVM **20.1.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 
 ## Installation Instructions
@@ -30,7 +30,7 @@ gu install -L yatta-component.jar
 ### Run yatta interpreter
 Yatta comes as a GraalVM component, with two executables:
 * `yatta` - default interpreter, supporting all GraalVM features, such as Polyglot usage, etc.
-* `yattanative` - ahead-of-time compiled interpreter that offers faster startup, though may be slower executing longer running programs
+* `yattanative` - ahead-of-time compiled interpreter that offers faster startup, though may be slower executing longer running programs. Note that `yattanative` currently works only on 64-bit Linux.
 
 Both executables currently accept only a filename as an argument. This file is then executed using the interpreter.
 Optionally, if no file is provided, the interpreter will expect an input on the standard input when ran. Ctrl-D marks the end of the input in this case.

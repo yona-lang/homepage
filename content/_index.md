@@ -22,15 +22,24 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 - **Polyglot language** - interoperability with other languages via GraalVM.
 
 ## Documentation
-Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [documentation]({{< ref "/docs" >}}) section.
+Get [**quickly started**]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
 
-To get **quickly started**, please follow the installation [instructions]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
+Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [**documentation**]({{< ref "/docs" >}}) section.
 
 ## Status
 The Yatta language is currently in active development. The release plan is:
-* [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2
-* [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4
-* version 1 - final - 2021
+* [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2. Focus of this release is:
+    - to automate the release process
+    - estabilish website and documentation
+    - spread the word and allow users to "play" with the language and the interpreter
+    - collect some feedback from potential users
+* [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
+    - significantly grow the standard library
+    - focus on optimizations in the interpreter
+* version 1 - final - 2021. Focus of this release is:
+    - stabilize standard library
+    - focus on tooling, such as package management, editor/IDE support
+    - provide a high-quality REPL
 
 See the [release notes]({{< ref "docs/release-notes" >}}) for more details.
 
