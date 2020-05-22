@@ -23,3 +23,5 @@ List of available functions:
 * `is_set`
 * `is_native`
 * `is_symbol`
+* `is_stm`
+* `is_var`
