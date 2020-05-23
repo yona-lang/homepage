@@ -60,3 +60,19 @@ Seq::is_string "hello"
 ```
 
 will result in a `true`.
+
+### Looking up an element by an index
+Function `lookup` takes an index and a sequence and returns an element on that index. It throws `:badarg` exception if the index is not found.
+```haskell
+Seq::lookup 2, [1, 2, 3]
+```
+
+### Zipping two sequences into one
+Function `zip` takes two sequences and produces one with tuples, one from each sequence.
+
+Example:
+```haskell
+Seq::zip [1, 2, 3] [4, 5, 6]
+```
+
+Will create a new sequence `[(1, 4), (2, 5), (3, 6)]`.

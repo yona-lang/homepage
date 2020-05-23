@@ -44,8 +44,18 @@ length = Dict::len {'a' = 1, 'b' = 2, 'c' = 3}
 ### Looking up a value by a key
 Function `lookup` returns a value by the key, or `()` if not found.
 
-First argument is a dictionary and the second is the key.
+First argument is the second is the key and the second one is the dictionary.
 
 ```haskell
-length = Dict::lookup {'a' = 1, 'b' = 2, 'c' = 3} 'a'
+length = Dict::lookup 'a' {'a' = 1, 'b' = 2, 'c' = 3}
 ```
+
+### Building a dictionary from a sequence of tuples
+Function `from_seq` builds a dictionary from a sequence of tuples.
+
+Example:
+```haskell
+Dict::from_seq [(1, 4), (2, 5), (3, 6)]
+```
+
+Will return `{1 = 4, 2 = 5, 3 = 6}`.

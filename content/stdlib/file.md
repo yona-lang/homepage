@@ -76,9 +76,12 @@ files = File::list_dir "./"
 ```
 
 ### Reading file - line mode
-File can be read either as a whole, or in lines (provided that it is a text file).
+File can be read either as a whole, or in lines (provided that it is a text file). Lines may be separated by either `\n` or `\r\n`. Function `read_line` expects a file handle, and returns either `:eof` if the whole file was already read, or a triple of:
+* `:ok`
+* body - either a byte sequence or a string, depending on a mode file is opened in
+* new file handle
 
-Reading the whole in a line mode can be implemented for example this way:
+Counting lines in a file can be implemented for example this way:
 
 ```haskell
 count_file_lines file = read_lines fh 0
@@ -91,6 +94,13 @@ read_lines fh acc =
 ```
 
 Function `read_all_lines` will count the number of lines in a file.
+
+For convenience, module `File` comes with a function `read_lines` which takes a file handle and returns a sequence of all lines.
+
+Example:
+```haskell
+lines = File::read_lines fh
+```
 
 ### Reading file - all at once
 To read the whole file, use function `read`. This function returns a sequence containing the contents of the file (either as a string, or sequence of bytes, depending on the mode in which the file is opened).

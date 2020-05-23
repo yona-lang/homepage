@@ -28,7 +28,6 @@ Yatta provides following functions and modules as part of the standard library.
 * [File]({{< ref "file" >}}) - contains functions for manipulating files
 * [Transducers]({{< ref "transducers" >}}) - contains reducer transformers, used for example by generators
 * [JSON]({{< ref "json" >}}) - JSON parser and generator functions
-* [STM]({{< ref "stm" >}}) - Software Transactional Memory
 * [Tuple]({{< ref "tuple" >}}) - helper functions for analyzing/manipulating tuples
 * [http\Client]({{< ref "http/client" >}}) - simple HTTP client
 * [http\Server]({{< ref "http/server" >}}) Java - Java interop functions
