@@ -115,8 +115,11 @@ in
 As shown in this example, `let` expression consists of two parts. First is used for definition of aliases and patterns using and the second one which contains the expression that is evaluated with these aliases on the stack. The result of this `let` expression is the result of the `expression2` expression. The `let` expression allows defining patterns which are on the left side of the first section. If a pattern is not matched, the whole expression throws a `:nomatch` exception. One alias line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
-Note that the order of execution of the alias/pattern lines is not strictly sequential. They may in fact be executed in any order (though it is guaranteed that names used previously will always be available).
+Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage]({{ < ref "/docs#example" > }}), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
+* the do not depend on each other (do not use names provided by other aliases in the same batch)
+* they return runtime Promise
 
+When both conditions are met, Yatta can safely execute them conurrently, speeding up the program execution.
 
 ## **`do` expression**: sequencing side effects
 `do` expressions is used for definition of a sequence of side effecting expressions. This expression is pretty similar to the `let` expression in the sense that it allows defining aliases and patterns, however, it doesn't have a separate expression that would be used as a result of this expression. Instead the result of the last line is used as the result.

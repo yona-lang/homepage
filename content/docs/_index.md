@@ -4,7 +4,7 @@ title: "Documentation"
 
 To get started with yatta, follow **[installation instructions]({{< ref "installation" >}})**. Following sections explain language features, syntax, semantics and evaluation model.
 
-Yatta provides a standard library which is documented in the **[standard library]({{< ref "/stdlib/overview" >}})** section.
+Yatta provides a standard library which is documented in the **[standard library]({{< ref "stdlib/overview" >}})** section.
 Plenty of demos can be found in [tests](https://github.com/yatta-lang/yatta/tree/master/language/tests).
 
 Yatta takes advantage of the **[polyglot]({{< ref "/polyglot" >}})** features of GraalVM and allows being used in combination with other languages on this platform, including Java.
@@ -14,23 +14,56 @@ Yatta provides fully transparent runtime system that integrates asynchronous non
 
 This approach provides several benefits to languages as opposed to having these features provided via external libaries, mainly that such library would have to be adopted by other libraries/frameworks in order to be usable and it would still impose additional boilerplate simply because libraries cannot typically change language syntax/semantics. This is why Yatta provides these features from day one, built into language syntax and semantics and therefore it is always available to any program without any external dependencies. At the same time, putting these features directly on the language/runtime level allows for additional optimizations that could otherwise be tricky or impossible.
 
-### Simple example
-The example below shows a simple program that reads line from two different files and writes a combined line to the third line. The execution order is as follows:
-
-1. Read line from file 1, at the same time, read line from file 2
-2. After both lines have been read, write file to file 3 and return it as a result of the `let` expression
-
-The important point of this rather simple example is to demonstrate how easy it is to write asynchronous concurrent code in Yatta.
+### Example
+Following example will be used as a case study into Yatta's execution model.
 
 ```haskell
 let
-    (:ok, line1) = File::read_line f1
-    (:ok, line2) = File::read_line f2
+    keys_file = File::open "tests/Keys.txt" {:read}
+    values_file = File::open "tests/Values.txt" {:read}
+
+    keys = File::read_lines keys_file
+    values = File::read_lines values_file
+
+    () = File::close keys_file
+    () = File::close values_file
 in
-    File::write f3 (line1 ++ line2)
+    Seq::zip keys values |> Dict::from_seq
 ```
 
-This allows programmers to focus on expressing concurrent programs much more easily and not having to deal with the details of the actual execution order. Additionally, when code must be executed sequentially, without explicit dependencies, a special expression `do` is available.
+In this example, both files are read concurrently, without having to write any additional boiler-plate.
+
+How does Yatta do this? A couple of things: first, remember the difference between the `do` and `let` expressions. They both are used to evaluate multiple steps of computation, however `do` ensures that the steps take place in the same sequence as they are defined, `let` tries to parallelize non-blocking tasks.
+
+Yatta will first perform a **static analysis** of the `let` expression in order to determine **dependencies between aliases/steps**. It knows that `keys_file` and `values_file` are used in the `File::read_lines` function and also knows that `keys` and `values` **do not depend on each other**, and so they **may be ran concurrently**. Yatta doesn't parallelize `keys_file` and `values_file`, nor does it parallelize closing files - even though it seemingly should -  there are no dependencies between these lines either. The trick is that `File::read_lines` is a function that returns a runtime level Promise (hidden from the user), and that means that reading two files in parallel is actually fine, since otherwise Yatta would need to block the execution there, so it can just block on both being read at once.
+
+Another important concept here is that the **order of aliases defined in the `let` expression does matter**. Yatta **doesn't just randomly re-arrange** them based on dependencies alone. If it did, it could for example close those files before they are ever read. That would be incorrect. Yatta just uses static analysis of this expression to determine which aliases can be "batched" and actually batches the execution if they provide underlying Promises. Then the whole expression is transformed into something like this:
+
+1. Execute batch 1 (sequentially, since File::open does not return a Promise):
+```haskell
+keys_file = File::open "tests/Keys.txt" {:read}
+values_file = File::open "tests/Values.txt" {:read}
+```
+
+2. Execute batch 2 (in parallel, since File::read_lines does return a Promise):
+```haskell
+keys = File::read_lines keys_file
+values = File::read_lines values_file
+```
+
+3. Result from batch 2 is a Promise aggregating both keys and values, which when complete, executes batch 3:
+```haskell
+() = File::close keys_file
+() = File::close values_file
+```
+
+4. Finally, the whole let expression is now a Promise, so run the final expression whenever it is ready:
+```haskell
+Seq::zip keys values |> Dict::from_seq |> println
+```
+Yatta automatically chains runtime Promises as needed and, more than that, it "unwraps" them whenever they are complete, so the runtime doesn't actually get bloated with propagating Promises all over the place. As soon as a Promise is computed, it becomes just a regular value again.
+
+These concepts allows programmers to focus on expressing concurrent programs much more easily and not having to deal with the details of the actual execution order. Additionally, when code must be executed sequentially, without explicit dependencies, a special expression `do` is available.
 
 ### Implementation
 In terms of implementation, the runtime system of Yatta can be viewed in terms of promise pipelineing or call-streams. The difference is that this pipelining and promise abstraction as such is completely transparent to the programmer and exists solely on the runtime level.

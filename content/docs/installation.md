@@ -15,7 +15,7 @@ Follow [Getting Started](https://www.graalvm.org/getting-started/) guide on the 
 
 ```bash
 export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$PATH
-wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz
+wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-linux-amd64-20.1.0.tar.gz
 mkdir $HOME/jdk && tar -xzf $HOME/jdk.tar.gz -C $HOME/jdk --strip-components=1
 gu install native-image
 ```

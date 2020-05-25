@@ -1,11 +1,13 @@
 ---
 title: "yatta-lang"
-tldr: Yatta is a modern take on a dynamic general-purpose programming language with advanced functional programming, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
+tldr: Yatta is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
-**Mailing list**: yatta-lang@googlegroups.com
+**Gitter**: [yattalang community](https://gitter.im/yattalang/community)
 
-Yatta is a minimalistic, opiniated, (strongly) dynamically typed, strict, functional programming language, with ML-like syntax, for the [GraalVM](https://www.graalvm.org/) polyglot virtual machine (VM). Yatta puts a strong focus on code readability.
+**Mailing list**: [Google Groups](https://groups.google.com/forum/#!forum/yatta-lang) or email to: yatta-lang@googlegroups.com
+
+Yatta is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yatta puts a strong focus on code readability.
 
 Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
 
@@ -22,18 +24,20 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 - **Polyglot language** - interoperability with other languages via GraalVM.
 
 ## Documentation
-Get [**quickly started**]({{< ref "/docs/installation" >}}) and follow the the [blog](https://functional.blog) to get updates regarding learning materials.
+Get [**quickly started**]({{< ref "/docs/installation" >}}) and follow the the [**blog**](https://functional.blog) to get updates regarding learning materials.
 
 Documentation regarding language syntax, execution model, standard library and polyglot usage is available via the [**documentation**]({{< ref "/docs" >}}) section.
 
 ## Status
 The Yatta language is currently in active development. The release plan is:
-* [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - 2020/Q2. Focus of this release is:
-    - to automate the release process
+* [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. Focus of this release was:
+    - stabilized syntax, semantics and runtime
+    - automated the release process
     - estabilish website and documentation
     - spread the word and allow users to "play" with the language and the interpreter
-    - collect some feedback from potential users
+    - collect some feedback from interested users
 * [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
+    - finished STM implementation together with a generic `with` [expression](https://github.com/yatta-lang/yatta/issues/33)
     - significantly grow the standard library
     - focus on optimizations in the interpreter
 * version 1 - final - 2021. Focus of this release is:
