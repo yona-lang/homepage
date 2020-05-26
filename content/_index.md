@@ -7,6 +7,8 @@ tldr: Yatta is a modern take on a dynamic and polyglot general-purpose programmi
 
 **Mailing list**: [Google Groups](https://groups.google.com/forum/#!forum/yatta-lang) or email to: yatta-lang@googlegroups.com
 
+**Docker image**: [Docker Hub](https://hub.docker.com/r/akovari/yatta)
+
 Yatta is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yatta puts a strong focus on code readability.
 
 Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
