@@ -2,12 +2,17 @@
 title: "Installation"
 ---
 
-## Requirements
+## Running as a Docker container:
+The simplest way to use Yatta is to run it in a Docker container. Please see the instructions at [Docker Hub](https://hub.docker.com/r/akovari/yatta).
+
+## Running within local installation of GraalVM
+
+### Requirements
 * Any OS capable of running GraalVM
 * GraalVM **20.1.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 
-## Installation Instructions
+### Installation Instructions
 It is possible to run Yatta locally, whether for play purposes or development of new features.
 
 ### Install GraalVM
