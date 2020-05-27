@@ -8,15 +8,16 @@ The simplest way to use Yatta is to run it in a Docker container. Please see the
 ## Running within local installation of GraalVM
 
 ### Requirements
-* Any OS capable of running GraalVM
+* Any OS capable of running [GraalVM](https://www.graalvm.org/getting-started/)
 * GraalVM **20.1.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
+* Ensure `PATH` contains your GraalVM root folder + `/bin`
 
 ### Installation Instructions
 It is possible to run Yatta locally, whether for play purposes or development of new features.
 
 ### Install GraalVM
-Follow [Getting Started](https://www.graalvm.org/getting-started/) guide on the GraalVM site or run:
+These instructions set up GraalVM, required environment variables and install the Yatta component into GraalVM.
 
 ```bash
 export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$JAVA_HOME/graalvm/bin:$PATH
@@ -26,7 +27,7 @@ gu install native-image
 gu install -ur https://github.com/yatta-lang/yatta/releases/download/0.8.0/yatta-component.jar
 ```
 
-Or pick an appropriate release at GitHub [releases](https://github.com/yatta-lang/yatta/releases) page.
+You can see Yatta releases at GitHub [releases](https://github.com/yatta-lang/yatta/releases) page.
 
 ### Run yatta interpreter
 Yatta comes as a GraalVM component, with two executables:
