@@ -101,7 +101,7 @@ Seq::random 10
 |> println
 ```
 
-## **`let` expression**: defining local aliases / pattern matching in the scope of evaluated expression
+## **`let` expression**: defining local aliases / pattern matching in the scope of evaluated expression {#let-expression}
 `let` expression allows defining aliases in the scope of the executed expressions. This expressions allows evaluating patterns as well, so it is possible to deconstruct a value from a sequence, tuple, set, dictionary or a record directly, for example:
 
 ```haskell
@@ -121,7 +121,7 @@ Note that the order of execution of the alias/pattern lines is not strictly sequ
 
 When both conditions are met, Yatta can safely execute them conurrently, speeding up the program execution.
 
-## **`do` expression**: sequencing side effects
+## **`do` expression**: sequencing side effects {#do-expression}
 `do` expressions is used for definition of a sequence of side effecting expressions. This expression is pretty similar to the `let` expression in the sense that it allows defining aliases and patterns, however, it doesn't have a separate expression that would be used as a result of this expression. Instead the result of the last line is used as the result.
 
 ```haskell

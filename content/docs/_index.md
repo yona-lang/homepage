@@ -33,7 +33,7 @@ in
 
 In this example, both files are read concurrently, without having to write any additional boiler-plate.
 
-How does Yatta do this? A couple of things: first, remember the difference between the `do` and `let` expressions. They both are used to evaluate multiple steps of computation, however `do` ensures that the steps take place in the same sequence as they are defined, `let` tries to parallelize non-blocking tasks.
+How does Yatta do this? A couple of things: first, check the difference between the [`do`]({{< relref "syntax#do-expression" >}}) and [`let`]({{< relref "syntax#let-expression" >}}) expressions on the [syntax]({{< ref "syntax" >}}) page. They both are used to evaluate multiple steps of computation, however `do` ensures that the steps take place in the same sequence as they are defined, `let` tries to parallelize non-blocking tasks.
 
 Yatta will first perform a **static analysis** of the `let` expression in order to determine **dependencies between aliases/steps**. It knows that `keys_file` and `values_file` are used in the `File::read_lines` function and also knows that `keys` and `values` **do not depend on each other**, and so they **may be ran concurrently**. Yatta doesn't parallelize `keys_file` and `values_file`, nor does it parallelize closing files - even though it seemingly should -  there are no dependencies between these lines either. The trick is that `File::read_lines` is a function that returns a runtime level Promise (hidden from the user), and that means that reading two files in parallel is actually fine, since otherwise Yatta would need to block the execution there, so it can just block on both being read at once.
 
