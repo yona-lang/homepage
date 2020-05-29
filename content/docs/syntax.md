@@ -4,9 +4,9 @@ title: "Syntax"
 
 Programs in Yatta consist always of evaluation of a single expression. In fact, any Yatta program consists of exactly one expression.
 
-Syntax is intentionally very minimalistic and inspired by languages such as SML or Haskell. There are only a handful of keywords, however it is not as flexible in naming as Haskell for example.
+The syntax is intentionally very minimalistic and inspired by languages such as SML or Haskell. There are only a handful of keywords, however it is not as flexible in naming as Haskell for example.
 
-Yatta programs have the ambition to be easily readable and custom operators with names consisting of symbols alone are not that useful when reading programs for the first time. Therefore Yatta does not support custom operators named by symbols only. Supported operators are listed [here]({{< ref "operators" >}}).
+Yatta programs have the ambition to be easily readable. Custom operators with names consisting of symbols alone are not that useful when reading a program for the first time. This is why Yatta does not support custom operators named by symbols only. Supported operators are listed [here]({{< ref "operators" >}}).
 
 Yatta does not have indentation specific parsing rules, but it does require new line at certain locations, which are noted in each individual expression descriptions.
 
