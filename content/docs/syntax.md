@@ -115,7 +115,7 @@ in
 As shown in this example, `let` expression consists of two parts. First is used for definition of aliases and patterns using and the second one which contains the expression that is evaluated with these aliases on the stack. The result of this `let` expression is the result of the `expression2` expression. The `let` expression allows defining patterns which are on the left side of the first section. If a pattern is not matched, the whole expression throws a `:nomatch` exception. One alias line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
-Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage]({{ < relref "/docs#example" > }}), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
+Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage]({{< ref "docs#example" >}}), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
 * the do not depend on each other (do not use names provided by other aliases in the same batch)
 * they return runtime Promise
 
