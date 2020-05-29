@@ -112,7 +112,7 @@ in
     expression2
 ```
 
-As shown in this example, the `let` expression consists of two parts. First is used for definition of aliases and patterns using and the second one which contains the expression that is evaluated with these aliases on the stack. The result of this `let` expression is the result of the `expression2` expression. The `let` expression allows defining patterns which are on the left side of the first section. If a pattern is not matched, the whole expression throws a `:nomatch` exception. One alias line can use names defined in previous lines.
+As shown in this example, the `let` expression consists of two parts. Each alias consists of an alias or a pattern on the left side, and the expression to evaluate on the right side. The result of this expression is then assigned to the alias or pattern matched on, depending on what is on the left side. The result of this `let` expression is the result of the `expression2` expression. The `let` expression allows defining patterns which are on the left side of the first section. If a pattern is not matched, the whole expression throws a `:nomatch` exception. One alias line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
 Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage]({{< ref "docs#example" >}}), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
@@ -151,7 +151,7 @@ case File::read_line f of
 end
 ```
 
-Same as with function definition patterns, patterns in the `case` expression can contain guard expressions, as is the case in the *tuple* pattern in the example above. Patterns with a guard expression will match only a guard evaluated to `true` can be found. Guards are tried in the order they are specified in.
+Same as with function definition patterns, patterns in the `case` expression can contain guard expressions, as is the case in the *tuple* pattern in the example above. Patterns with a guard expression will be matched only the guard evaluated to `true`. Note that each pattern may have multiple guard expression, in which case the first one evaluated to `true` will match. Guards are tried in the order they are specified in.
 
 ## **`if` expression**: conditions
 `if` is a conditional expression that takes form:
