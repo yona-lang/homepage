@@ -1,18 +1,26 @@
 ---
 title: "Syntax"
 ---
-
 Programs in Yatta consist always of evaluation of a single expression. In fact, any Yatta program consists of exactly one expression.
 
 The syntax is intentionally very minimalistic and inspired by languages such as SML or Haskell. There are only a handful of keywords, however it is not as flexible in naming as Haskell for example.
 
-Yatta programs have the ambition to be easily readable. Custom operators with names consisting of symbols alone are not that useful when reading a program for the first time. This is why Yatta does not support custom operators named by symbols only. Supported operators are listed [here]({{< ref "operators" >}}).
+Yatta programs have the ambition to be easily readable. Custom operators with names consisting of [symbols]({{< ref "data-types" >}}) alone are not that useful when reading a program for the first time. This is why Yatta does not support custom operators named by [symbols]({{< ref "data-types" >}}) only. Supported operators are listed [here]({{< ref "operators" >}}).
 
 Yatta does not have indentation specific parsing rules, but it does require new line at certain locations, which are noted in each individual expression descriptions.
 
 Comments are denoted by the `#` character and everything that follows this character until the end of line (`\n` or `\r\n`) is considered a comment and ignored.
 
 The source code of a Yatta program must be a valid UTF-8 text file.
+
+## **Terminology**
+These are some common terms and phrases used throughout these texts explained to a user unfamiliar with functional concepts:
+* **Function application**: simply function call.
+* **[Currying](https://javascript.info/currying-partials)**: a transformation of functions that translates a function from callable as `f(a, b, c)` into callable as `f(a)(b)(c)`. Currying doesn’t call a function. It just transforms it. The example uses JavaScript syntax for clarity.
+* **Alias**: what would be a variable in other languages, but cannot have its value modified during program execution. Once set, this __alias__, or a __name__, always contains the same original value.
+* **Pattern**: an expected shape of a value. If the value "matches" this pattern, then this value can also be deconstructed onto it. For instance a pattern can be a first element of a list and the rest. The first element can be also assigned to an alias (or the rest), provided that the value matched this pattern. Patterns can be nested and serve as a builidng blocks for describing data structure for matching and extracting values. Patterns may be as simple as an alias - that is also a pattern in a way. An alias will be matched if an only it is a new name, that was not previously assigned, or if it was, then only if the value is the same as the one previously assigned to it.
+* **Guard**: guards are additional conditions that may be applied to patterns, that otherwise couldn't be expressed using pattern syntax. Typical example might be a function call to determine a type of a value for example.
+* **String interpolation**: process of substituting values of variables into placeholders in a string. For instance, if there a template for saying hello to a person like "Hello {parson}, nice to meet you!", where the placeholder should be replaced with an actual person's name. This process is called string interpolation.
 
 ## **Functions**: definition and application
 Functions in Yatta are defined in a very short and concise form. They may take arguments, which the function can pattern match on, and one function can be defined using multiple arguments. Function names must start with a lowercase letter, followed by any letters, numbers or underscores.
@@ -31,7 +39,7 @@ factorial 1 = 1
 factorial n 
   | n > 1 = n * factorial (n - 1)
 ```
-Which means that there is an additional condition for the `n` value to be greater than 0. There may be multiple guards for each pattern and they must each be on a new line. A guard starts with the `|` character, followed an expression that must evaluate to a boolean and finally an `=` and the expression to evaluate if the pattern matches and the guard is `true`.
+Which means that there is an additional condition for the `n` value to be greater than 0. There may be multiple guards for each pattern and they must each be on a new line. A guard starts with the `|` character, followed an expression that must evaluate to a boolean and finally an `=` and the expression to evaluate if the pattern matches and the guard is `true`. Guards are used to express conditions that must be met in order for the pattern to match. A pattern may have none, one or multiple guards, and the first one matching will cause the pattern to match.
 
 Note that function arguments may actually be full patterns, not just argument names. Patterns are described in the section named *Pattern Matching*.
 
@@ -102,7 +110,7 @@ Seq::random 10
 ```
 
 ## **`let` expression**: defining local aliases / pattern matching in the scope of evaluated expression {#let-expression}
-The `let` expression allows defining aliases in the scope of the executed expressions. This expression allows evaluating patterns as well, so it is possible to deconstruct a value from a sequence, tuple, set, dictionary or a record directly, for example:
+The `let` expression allows defining aliases in the scope of the executed expressions. Alias representes a name for some value, like a variable, unlike a variable thoguh, its value may not be changed over time. This expression allows evaluating patterns as well, so it is possible to deconstruct a value from a sequence, tuple, set, dictionary or a record directly, for example:
 
 ```haskell
 let
@@ -112,17 +120,17 @@ in
     expression2
 ```
 
-As shown in this example, the `let` expression consists of two parts. Each alias consists of an alias or a pattern on the left side, and the expression to evaluate on the right side. The result of this expression is then assigned to the alias or pattern matched on, depending on what is on the left side. The result of this `let` expression is the result of the `expression2` expression. The `let` expression allows defining patterns which are on the left side of the first section. If a pattern is not matched, the whole expression throws a `:nomatch` exception. One alias line can use names defined in previous lines.
+As shown in this example, the `let` expression consists of two parts. Each line consists of an alias or a pattern on the left side, and the expression to evaluate on the right side. The result of this expression is then matched to the pattern on the left side, or simply assigned to an alias, depending on what is on the left side. The result of this `let` expression is the result of the `expression2` expression. If a pattern on the left is not matched on any of the lines, the whole `let` expression raises a `:nomatch` exception. One line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
 Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage]({{< ref "docs#example" >}}), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
 * the do not depend on each other (do not use names provided by other aliases in the same batch)
-* they return a runtime Promise
+* they return a runtime Promise (IO operations, or results of the [`async`]({{< ref "stdlib/functions/async" >}}) function)
 
-When both conditions are met, Yatta can safely execute them concurrently, speeding up the program execution.
+When both conditions are met, Yatta can safely execute them concurrently, avoiding unnecessary blocking and effectively speeding up the program execution.
 
 ## **`do` expression**: sequencing side effects {#do-expression}
-The `do` expression is used to define a sequence of side effecting expressions. This expression is pretty similar to the `let` expression in the sense that it allows defining aliases and patterns, however, it doesn't have a separate expression that would be used as a result of this expression. Instead the result of the last line is used as the result.
+The `do` expression is used to define a sequence of side effecting expressions. This expression is very similar to the `let` expression in the sense that it allows defining aliases and patterns, however, it doesn't have a separate expression that would be used as a result of this expression. Instead the result of the last line is used as the result.
 
 ```haskell
 do
@@ -134,7 +142,7 @@ do
 end
 ```
 
-Note that unlike the case with the `let` expression, the order of executed expressions is guaranteed to be exactly the same as the order in which they are written. This is the main use-case of the `do` expression: to allow strict ordering of execution. It does not matter whether an expression returns a run-time level promise (such as one that can be created by a IO call or by using the `async` function), the order is still maintained.
+Note that unlike the case with the `let` expression, the order of executed expressions is guaranteed to be exactly the same as the order in which they are written. This is the main use-case of the `do` expression: to allow strict ordering of execution. It does not matter whether an expression returns a run-time level Promise (such as one that can be created by a IO call or by using the [`async`]({{< ref "stdlib/functions/async" >}}) function), the order defined in this expression is always guaranteed to be maintained.
 
 ## **`case` expression**: pattern matching
 `case` expression is used for pattern matching on an expression. Each line of this expression contains a pattern followed by an arrow `->` and an expression that is evaluated in case of a successful pattern match. Patterns are tried in the order in which they are specified. The default case can be denoted by an underscore `_` pattern that always evaluates as true.
@@ -267,7 +275,7 @@ See the section about [module loader]({{< ref "module-loader" >}}) for more deta
 ## **`raise`, `try`/`catch` expressions**: raising and catching exceptions
 Yatta is not a pure language, therefore it allows raising exceptions. Exceptions in Yatta are represented as a tuple of a symbol and a message. Message can be empty, if not provided as an argument to the keyword/function `raise`.
 
-Exceptions in Yatta consist of three components. Type of exception is of type of symbol. The second component is a string description of the exception - an error message. Last component is the stacktrace which is appended by the runtime automatically.
+Exceptions in Yatta consist of three components. First component, is the type of the exception, represented as a symbol. The second component is a string description of the exception - an error message. Last component is the stacktrace which is appended by the runtime automatically.
 
 Raising an exception can be accomplished by the `raise` expression:
 

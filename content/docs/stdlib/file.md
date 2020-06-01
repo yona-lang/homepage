@@ -75,7 +75,7 @@ To list files in a directory, use function `list_dir`. Note that this function d
 files = File::list_dir "./"
 ```
 
-### Reading file - line mode
+### Reading file - line mode {#read-lines}
 File can be read either as a whole, or in lines (provided that it is a text file). Lines may be separated by either `\n` or `\r\n`. Function `read_line` expects a file handle, and returns either `:eof` if the whole file was already read, or a triple of:
 * `:ok`
 * body - either a byte sequence or a string, depending on a mode file is opened in
