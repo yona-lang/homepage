@@ -32,4 +32,5 @@ Yatta provides following functions and modules as part of the standard library.
 * [http\Client]({{< ref "http/client" >}}) - simple HTTP client
 * [http\Server]({{< ref "http/server" >}}) Java - Java interop functions
 * [java\Types]({{< ref "java/types" >}}) - Java types conversions
+* [Java]({{< ref "java" >}}) - Java interoperability interface
 * [System]({{< ref "system" >}}) - execute external system programs

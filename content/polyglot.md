@@ -30,7 +30,7 @@ Value returnValue = context.eval("yatta", "5 + 3");
 ### Type-conversions, constructing objects and calling methods
 Yatta API for calling code in Java consists of two modules:
 
-* `Java` - for instantiating new objects, checking instance type of an object, raising Java exceptions and casting Java objects
+* [`Java`]({{< ref "/docs/stdlib/java" >}}) - for instantiating new objects, checking instance type of an object, raising Java exceptions and casting Java objects
 * [`java\Types`]({{< ref "/docs/stdlib/java/types" >}}) - for converting Yatta types to Java types (for example Yatta contains only 64bit integers, so they need to be converted to Java integers when calling a Java method that expects an integer. Same for double vs float.
 
 Simple example to create a BigInteger in Yatta and then check that it is actually of `BigInteger` type:
