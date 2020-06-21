@@ -98,3 +98,6 @@ See [pattern matching]({{< ref "pattern-matching" >}}) guide.
 
 ## Module Loading
 See [module loader]({{< ref "module-loader" >}}) page for more details about module loading.
+
+## Resource Management
+See [resource management]({{< ref "resource-management" >}}) for details about Yatta's approach to resource management.

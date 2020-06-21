@@ -17,15 +17,16 @@ Yatta abstract users from dealing with non-blocking asynchronous computations an
 
 ## Goals & Priorities
 - **Excellent readability** - simple syntax, few keywords, virtually no boilerplate.
-- **Few types of expressions** - `module`, `import`, function(function does not need a keyword, it is defined by a name and arguments - patterns), `case`, `if`, `let`, `do` and `try`/`catch` + `raise`.
-- **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. Modules are first level values and can be created dynamically.
+- **Few types of expressions** - `module`, `import`, function(function does not need a keyword, it is defined by a name and arguments - patterns), `case`, `if`, `let`, `do`, `with` and `try`/`catch` + `raise`.
+- **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. [**Modules**]({{< relref "docs/syntax#module-expression" >}}) are first level values and can be created dynamically.
 - **Single expression principle** - program is always one expression - this enables simpler evaluation and syntax, allows writing simple scripts as well as complex applications.
-- **Powerful and efficient** built-in **immutable** data structures with full support for **pattern matching**, including Sequence, Dictionary and Set.
-- Custom data types representable as **records**.
+- **Powerful and efficient** built-in **immutable** data structures with full support for [**pattern matching**]({{< ref "docs/pattern-matching" >}}), including Sequence, Dictionary and Set.
+- Custom data types representable as [**records**]({{< relref "docs/syntax#records" >}}).
 - Built-in runtime level **non-blocking asynchronous IO**.
 - [**Simple concurrency**]({{< relref "docs#execution-model" >}}), built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
-- **Advanced concurrency** provided by built-in **Software Transactional Memory** (STM) module.
+- **Advanced concurrency** provided by built-in [**Software Transactional Memory** (STM)]({{< ref "docs/stdlib/stm" >}}) module.
 - **Polyglot language** - interoperability with other languages via GraalVM.
+- **Powerful resource management** - automatically [**manage resources**]({{< ref "docs/resource-management" >}}) using built-in context manager infrastructure.
 
 ## Documentation
 Get [**quickly started**]({{< ref "/docs/installation" >}}) and follow the the [**blog**](https://functional.blog) to get updates regarding learning materials.

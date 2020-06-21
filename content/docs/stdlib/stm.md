@@ -26,12 +26,32 @@ var = STM::var stm initial_value
 
 Creating a new var requires the STM instance and an initial value this var holds.
 
-### Updating the STM in a transaction
-Updating a value held by a var must take place inside a transaction. Function `transaction` takes a reference to the STM, a flag whether the transaction is read only or not and a 0-argument lambda, which is the actual code executed inside a transaction. The return value of the `transaction` function is the return value of the provided lambda.
+### Starting a read-only transaction
+Function `read_tx` creates a read-only transaction wrapped in a [context manager]({{< relref "docs/resource-management#context-managers" >}}). It takes a reference to the STM system and returns the context manager.
+
+Access the STM in a transaction:
+```haskell
+with STM::read_tx stm
+    STM::run (\-> check_balance)
+end
+```
+
+### Starting a read-write transaction
+Function `write_tx` creates a read-write transaction wrapped in a [context manager]({{< relref "docs/resource-management#context-managers" >}}). It takes a reference to the STM system and returns the context manager.
+
+Access the STM in a transaction:
+```haskell
+with STM::write_tx stm
+    STM::run (\-> withdraw)
+end
+```
+
+### Updating the STM
+Updating a value held by a var must take place inside a transaction. Function `run` takes a 0-argument lambda, which is the actual code executed inside a transaction. The return value of the `run` function is the return value of the provided lambda.
 
 Example:
 ```haskell
-STM::transaction stm false (\-> withdraw)
+STM::run stm (\-> withdraw)
 ```
 
 Note that passing a zero argument lambda [requires]({{< relref "syntax#anonymous-functions-aka-lambdas" >}}) it to be wrapped in another lambda, this is to prevent its eager evaluation.

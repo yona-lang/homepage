@@ -174,6 +174,28 @@ else
 
 Both the `then` and the `else` parts must be defined. The expression after `if` must evaluate to a boolean value. Empty sequences, dictionaries or similar will not work! New lines are allowed, but not required.
 
+## **`with` expression**: resource management {#with-expression}
+`with` expression handles resource management within its scope. It initilizes the scope with a [context manager]({{< relref "resource-management#context-managers" >}}) that is available within the scope its body.
+
+The syntax lookes like this (`as alias` part is optional):
+```haskell
+with contextManager as alias
+    bodyExpression
+end
+```
+
+The `contextManager` expression must return a [context manager]({{< relref "resource-management#context-managers" >}}). If no alias is used, then the context manager is not meant to be interacted with directly. An example for this would be an [STM]({{< ref "stdlib/stm" >}}) transaction, that just needs to be present but there is no need to directly refer to it.
+
+Alternatively, if the alias is specified, as usually case with files, then the file creted in the `contextManager` part of this expression can be directly accessed in `bodyExpression`.
+
+Example that reads all lines using [`File::read_lines`]({{< relref "stdlib/file#opening-closing" >}}) function:
+
+```haskell
+with File::open "File.txt" {:read} as file
+    File::read_lines file
+end
+```
+
 ## **module expression**
 `module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - in this case, the file must take the name of the module + `.yatta`. Also, see section about [module loader]({{< ref "module-loader" >}}) for details regarding loading modules.
 

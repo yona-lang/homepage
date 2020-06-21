@@ -4,8 +4,8 @@ tags: stdlib
 ---
 
 This module provides functions for reading, writing and otherwise manipulating files.
-## Usage
 
+## Usage
 All file access is non-blocking and asynchronous. Behind the courtains, file operations use [AsynchronousFileChannel](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/channels/AsynchronousFileChannel.html).
 Files can be worked in either text or binary mode. Text mode anticipates that file is encoded in UTF-8 encoding, whereas binary file may contain any contents.
 
@@ -39,6 +39,18 @@ File should be closed when no longer used. This ensures that file may no longer 
 ```haskell
 File::close fh
 ```
+
+### Opening and closing files with [context managers]({{< relref "docs/resource-management#context-managers" >}}) {#opening-closing}
+While it is possible to manually close a file, it is recommended to take advantege of file [context managers]({{< relref "docs/resource-management#context-managers" >}}) instead. They provide error handling, such that the user does not need to worry about properly closing files in all situations. Using files as context managers is really simple, since it requires nothing more than the `open` function, that already returns a context manager!
+
+Therefore using files in this way is as simple as writing:
+```haskell
+with File::open "File.txt" {:read} as file
+    File::read_lines file
+end
+```
+
+There is no need to explicitly close files when using context managers.
 
 ### Deleting a file
 Function to delete an existing file takes a file handle a returns a `()`.
