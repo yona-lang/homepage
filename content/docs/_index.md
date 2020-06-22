@@ -79,6 +79,21 @@ Yatta automatically chains runtime Promises as needed and, more than that, it "u
 
 These concepts allows programmers to focus on expressing concurrent programs much more easily and not having to deal with the details of the actual execution order. Additionally, when code must be executed sequentially, without explicit dependencies, a special expression `do` is available.
 
+#### Simplifying the example by using resource managemenet
+This example that concurrenly reads two files, line by line, and produces pairs of them as a dictionary can be implemented in Yatta using its [resource management]({{< ref "resource-management" >}}) features, as of Yatta 0.8.1.
+
+Shorter version, equivalent in terms of features, but actually properly handling errors would look like:
+
+```haskell
+let
+    keys   = with File::open "tests/Keys.txt" {:read}   as keys_file    File::read_lines keys_file   end
+    values = with File::open "tests/Values.txt" {:read} as values_file  File::read_lines values_file end
+in
+    Seq::zip keys values |> Dict::from_seq
+```
+
+Note that if error arises in the original example, files would not be closed. In this improved example they would. Otherwise, everything else regarding the non-blocking and parallel nature of this code stands.
+
 ### Implementation
 In terms of implementation, the runtime system of Yatta can be viewed in terms of promise pipelineing or call-streams. The difference is that this pipelining and promise abstraction as such is completely transparent to the programmer and exists solely on the runtime level.
 
