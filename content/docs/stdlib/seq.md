@@ -64,7 +64,19 @@ will result in a `true`.
 ### Looking up an element by an index
 Function `lookup` takes an index and a sequence and returns an element on that index. It throws `:badarg` exception if the index is not found.
 ```haskell
-Seq::lookup 2, [1, 2, 3]
+Seq::lookup [1, 2, 3] 2
+```
+
+### Taking first `n` elements
+Function `takes` takes first `n` elements.  It throws `:badarg` exception if the `n` is greater or equal than the length of the sequence.
+```haskell
+Seq::take [1, 2, 3] 2  # returns [1, 2]
+```
+
+### Dropping first `n` elements
+Function `drop` drops first `n` elements.  It throws `:badarg` exception if the `n` is greater or equal than the length of the sequence.
+```haskell
+Seq::drops [1, 2, 3] 2  # returns [3]
 ```
 
 ### Zipping two sequences into one

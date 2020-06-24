@@ -36,4 +36,4 @@ Yatta provides following functions and modules as part of the standard library.
 * [System]({{< ref "system" >}}) - execute external system programs
 * [context\Local]({{< ref "context/local" >}}) - utilities for implementing custom context managers, see [resource management]({{< ref "/docs/resource-management" >}}) for details
 * [STM]({{< ref "stm" >}}) - Software Transactional Memory
-
+* [Regexp]({{< ref "regexp" >}}) - Regular Expressions
