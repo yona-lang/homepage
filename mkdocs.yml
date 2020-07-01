@@ -13,7 +13,7 @@ nav:
       - Module Loader: module-loader.md
       - Polyglot APIs: polyglot.md
       - Resource Management: resource-management.md
-  - Standard Library: stdlib
+  - Standard Library: stdlib/index.md
 
 theme:
   name: material
