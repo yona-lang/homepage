@@ -1,18 +1,14 @@
-# Installation
-First install [hugo](https://gohugo.io/). Then:
+Using MkDocs: https://www.mkdocs.org/user-guide/writing-your-docs/
 
-    mkdir themes
-    git submodule add https://github.com/athul/archie.git themes/archie
-    git submodule add -b master git@github.com:yatta-lang/yatta-lang.github.io.git public
+# Installing dependencies
 
+    pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin
 
-# Dev server
+# Running local development server
 
-    hugo server -D
+    mkdocs serve
 
+# Building site
 
-# Build docs
-
-    hugo
-
-Go to public, commit and push to origin. Then also commit source changes to this repo.
+    mkdocs build
+    # commit and push "site/" submodule

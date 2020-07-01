@@ -1,3 +1,4 @@
-[submodule "themes/archie"]
-	path = themes/archie
-	url = https://github.com/athul/archie.git
+[submodule "site"]
+	path = site
+	url = git@github.com:yatta-lang/yatta-lang.github.io.git
+	branch = master

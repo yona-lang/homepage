@@ -1,0 +1,59 @@
+site_name: Yatta Language
+nav:
+  - Home: index.md
+  - Usecase: usecase.md
+  - Getting Started:
+      - Installation: installation.md
+      - Release Notes: release-notes.md
+  - Syntax: syntax.md
+  - Features:
+      - Operators: operators.md
+      - Data Types: data-types.md
+      - Pattern Matching: pattern-matching.md
+      - Module Loader: module-loader.md
+      - Polyglot APIs: polyglot.md
+      - Resource Management: resource-management.md
+  - Standard Library: stdlib
+
+theme:
+  name: material
+  custom_dir: overrides
+
+markdown_extensions:
+  - codehilite
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - admonition
+  - attr_list
+
+plugins:
+  - search # necessary for search to work
+  - git-revision-date-localized
+  - minify:
+      minify_html: true
+
+repo_name: yatta-lang/yatta
+repo_url: https://github.com/yatta-lang/yatta
+
+google_analytics:
+  - UA-1855461-3
+  - auto
