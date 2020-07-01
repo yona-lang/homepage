@@ -5,6 +5,9 @@ title: "Installation"
 ## Running as a Docker container:
 The simplest way to use Yatta is to run it in a Docker container. Please see the instructions at [Docker Hub](https://hub.docker.com/r/akovari/yatta).
 
+## IDEA Plugin
+Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14536-yatta-language) for Yatta, which provides syntax highlighting and syntax validation.
+
 ## Running within local installation of GraalVM
 
 ### Requirements

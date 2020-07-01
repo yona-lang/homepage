@@ -6,8 +6,10 @@ description: Yatta is a modern take on a dynamic and polyglot general-purpose pr
 [![Actions Status](https://github.com/yatta-lang/yatta/workflows/Release/badge.svg)](https://github.com/yatta-lang/yatta/actions)
 ![Test](https://github.com/yatta-lang/yatta/workflows/Test/badge.svg)
 ![Publish Docker Image](https://github.com/yatta-lang/yatta/workflows/Publish%20Docker%20Image/badge.svg)
+
 [![Gitter](https://badges.gitter.im/yattalang/community.svg)](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Google group : yatta-lang](https://img.shields.io/badge/yatta--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yatta-lang)
+
 [![Docker Hub](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
 [![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
 
