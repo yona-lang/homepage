@@ -27,13 +27,13 @@ Follow our [**blog**](https://functional.blog) for release announcements and oth
 - **Powerful and efficient** built-in **immutable** data structures with full support for [**pattern matching**](features/pattern-matching), including Sequence, Dictionary and Set.
 - Custom data types representable as [**records**](features/syntax#records).
 - Built-in runtime level **non-blocking asynchronous IO**.
-- [**Simple concurrency**](usecase#execution-model), built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
+- [**Simple concurrency**](about#execution-model), built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
 - **Advanced concurrency** provided by built-in [**Software Transactional Memory** (STM)](stdlib/stm) module.
 - **Polyglot language** - interoperability with other languages via GraalVM.
 - **Powerful resource management** - automatically [**manage resources**](features/resource-management) using built-in context manager infrastructure.
 
 !!! tip
-    Read more about the philosophy behind Yatta [here](usecase.md).
+    Read more about the philosophy behind Yatta [here](about.md).
 
 ## Status
 The Yatta language is currently in active development. The release plan is:
