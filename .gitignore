@@ -8,6 +8,9 @@ hugo.exe
 hugo.darwin
 hugo.linux
 
+# Python venv
+.venv
+
 ### Code ###
 .vscode/*
 !.vscode/settings.json
