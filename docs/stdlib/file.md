@@ -40,7 +40,7 @@ File should be closed when no longer used. This ensures that file may no longer 
 File::close fh
 ```
 
-### Opening and closing files with [context managers](/docs/resource-management.md#context-managers) {#opening-closing}
+### Opening and closing files with [context managers](/features/resource-management#context-managers) {#opening-closing}
 While it is possible to manually close a file, it is recommended to take advantege of file [context managers](/docs/resource-management.md#context-managers) instead. They provide error handling, such that the user does not need to worry about properly closing files in all situations. Using files as context managers is really simple, since it requires nothing more than the `open` function, that already returns a context manager!
 
 Therefore using files in this way is as simple as writing:

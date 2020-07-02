@@ -1,5 +1,5 @@
 ---
-title: "Standard Library"
+title: "Overview"
 tags: stdlib
 ---
 
@@ -34,6 +34,6 @@ Following functions and modules are provided as part of the standard library.
 * [java\Types](java/types.md) - Java types conversions
 * [Java](java.md) - Java interoperability interface
 * [System](system.md) - execute external system programs
-* [context\Local](context/local.md) - utilities for implementing custom context managers, see [resource management](/docs/resource-management.md) for details
+* [context\Local](context/local.md) - utilities for implementing custom context managers, see [resource management](/features/resource-management.md) for details
 * [STM](stm.md) - Software Transactional Memory
 * [Regexp](regexp.md) - Regular Expressions

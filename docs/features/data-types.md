@@ -19,5 +19,5 @@ Yatta is dynamically typed language, meaning that types are checked during runti
 * anonymous function(lambda): `\first_arg second_arg -> first_arg + second_arg`
 * unit, or `()` - representing no value
 * native object: underlying Java object that is used by some stdlib functions, such as File descriptor
-* stm - [software transactional memory](stdlib/stm.md)
-* var - reference to entry in the [software transactional memory](stdlib/stm.md)
+* stm - [software transactional memory](/stdlib/stm)
+* var - reference to entry in the [software transactional memory](/stdlib/stm)

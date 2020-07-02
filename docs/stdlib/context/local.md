@@ -3,7 +3,7 @@ title: "context\\Local"
 tags: stdlib
 ---
 
-This module provides functions for implementing user-level [context managers](/docs/resource-management.md#context-managers). It provides necessary functions that allow reading the local context dictionary as well as convenience functions for constructing and deconstructing the context manager tuples.
+This module provides functions for implementing user-level [context managers](/features/resource-management.md#context-managers). It provides necessary functions that allow reading the local context dictionary as well as convenience functions for constructing and deconstructing the context manager tuples.
 
 ## Creating a new custom context manager
 Function `new` takes four arguments and builds a new context manager tuple:

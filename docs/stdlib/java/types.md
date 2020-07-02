@@ -3,7 +3,7 @@ title: "java\\Types"
 tags: stdlib
 ---
 
-This module provides some helper functions for [interoperability with Java](/docs/polyglot.md).
+This module provides some helper functions for [interoperability with Java](/features/polyglot.md).
 
 ## Usage
 These are functions for converting Yatta data types into Java types and should be used, when required as described in the polyglot page, [automatic conversions](/polyglot.md#automatic-conversions) section.

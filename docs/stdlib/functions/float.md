@@ -11,7 +11,7 @@ Function `float` converts provided argument to a floating point number.
 float "5.0"
 ```
 
-Supported [data types](/docs/data-types.md):
+Supported [data types](/features/data-types.md):
 * byte
 * integer
 * float

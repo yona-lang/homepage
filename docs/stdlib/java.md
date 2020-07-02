@@ -3,7 +3,7 @@ title: "Java"
 tags: stdlib
 ---
 
-This module provides important functions for [interoperability with Java](/docs/polyglot.md).
+This module provides important functions for [interoperability with Java](/features/polyglot).
 
 ## Usage
 This modules allows Java executing specific code, such as instantiating a class, casting to another type, checking whether a value is an instance of a class, or throwing Java exceptions.

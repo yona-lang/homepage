@@ -1,12 +1,9 @@
----
-title: "Dict"
-tags: stdlib
----
+# Dict
 
 This module provides functions for manipulating Dictionaries. Dictionaries are immutable data structure containing unique pairs of key and value.
 
 ## Usage
-There is a special syntax to create an empty dictionary: `{}`. Dictionaries support special [operators](/docs/operators.md) for adding elements or operations typical for dictionaries, such as unions or intersections etc.
+There is a special syntax to create an empty dictionary: `{}`. Dictionaries support special [operators](/features/operators) for adding elements or operations typical for dictionaries, such as unions or intersections etc.
 
 ### Folding a dictionary
 Folding a dictionary is a process of iterating over its key-value pairs while producing one result value. An example of a folding function could be a sum function, that iterates over all elements and adds all the values up, producing a single result.

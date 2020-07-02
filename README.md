@@ -2,7 +2,7 @@ Using MkDocs: https://www.mkdocs.org/user-guide/writing-your-docs/
 
 # Installing dependencies
 
-    pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin
+    pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin
 
 # Running local development server
 
@@ -21,3 +21,9 @@ If you do, make sure that the python version used to run ``mkdocs serve`` is the
 
     mkdocs build
     # commit and push "site/" submodule
+
+# References for plugins used
+
+Awesome Pages:
+
+    https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/

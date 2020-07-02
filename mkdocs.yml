@@ -1,19 +1,4 @@
 site_name: Yatta Language
-nav:
-  - Home: index.md
-  - Usecase: usecase.md
-  - Getting Started:
-      - Installation: installation.md
-      - Release Notes: release-notes.md
-  - Syntax: syntax.md
-  - Features:
-      - Operators: operators.md
-      - Data Types: data-types.md
-      - Pattern Matching: pattern-matching.md
-      - Module Loader: module-loader.md
-      - Polyglot APIs: polyglot.md
-      - Resource Management: resource-management.md
-  - Standard Library: stdlib/index.md
 
 theme:
   name: material
@@ -52,6 +37,7 @@ plugins:
   - git-revision-date-localized
   - minify:
       minify_html: true
+  - awesome-pages
 
 repo_name: yatta-lang/yatta
 repo_url: https://github.com/yatta-lang/yatta

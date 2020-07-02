@@ -3,7 +3,7 @@ title: "Types"
 tags: stdlib
 ---
 
-This module provides functions for checking the type of a particular value, which is particularly useful in [guard expressions](/docs/syntax.md).
+This module provides functions for checking the type of a particular value, which is particularly useful in [guard expressions](/features/syntax.md).
 
 ## Usage
 

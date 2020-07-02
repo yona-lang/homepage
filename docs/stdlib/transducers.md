@@ -47,4 +47,4 @@ in
 
 Source code for all transducers available in Yatta is available [here](https://github.com/yatta-lang/yatta/blob/master/language/lib-yatta/Transducers.yatta).
 
-Note that transducers are actually used in [generators](/docs/syntax.md#generators) as well, they are just a syntax sugar for them for the built-in collections.
+Note that transducers are actually used in [generators](/features/syntax.md#generators) as well, they are just a syntax sugar for them for the built-in collections.

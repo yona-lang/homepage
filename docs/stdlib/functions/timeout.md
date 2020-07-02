@@ -3,7 +3,7 @@ title: "timeout"
 tags: stdlib
 ---
 
-Function `timeout` will timeout an asynchronous computation after specified amount of time. It requires two arguments, a [time tuple](/docs/stdlib/misc/timetuple.md) representing the duration for which the computation is allowed to run and asynchronous computation, which can be obtain by an [async](async.md) function for example. If the value is not computed in the specified timeout, a `:timeout` exception is raised.
+Function `timeout` will timeout an asynchronous computation after specified amount of time. It requires two arguments, a [time tuple](/features/stdlib/misc/timetuple.md) representing the duration for which the computation is allowed to run and asynchronous computation, which can be obtain by an [async](async.md) function for example. If the value is not computed in the specified timeout, a `:timeout` exception is raised.
 
 ## Usage
 ```haskell

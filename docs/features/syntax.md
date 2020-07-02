@@ -22,7 +22,7 @@ These are some common terms and phrases used throughout these texts explained to
 
 * **Alias**: what would be a variable in other languages, but cannot have its value modified during program execution. Once set, this __alias__, or a __name__, always contains the same original value.
 
-* **Pattern**: an expected shape of a value. If the value "matches" this pattern, then this value can also be deconstructed onto it. For instance a pattern can be a first element of a list and the rest. The first element can be also assigned to an alias (or the rest), provided that the value matched this pattern. Patterns can be nested and serve as a builidng blocks for describing data structure for matching and extracting values. Patterns may be as simple as an alias - that is also a pattern in a way. An alias will be matched if an only it is a new name, that was not previously assigned, or if it was, then only if the value is the same as the one previously assigned to it.
+* **Pattern**: an expected shape of a value. If the value "matches" this pattern, then this value can also be deconstructed onto it. For instance a pattern can be a first element of a list and the rest. The first element can be also assigned to an alias (or the rest), provided that the value matched this pattern. Patterns can be nested and serve as a building blocks for describing data structure for matching and extracting values. Patterns may be as simple as an alias - that is also a pattern in a way. An alias will be matched if an only it is a new name, that was not previously assigned, or if it was, then only if the value is the same as the one previously assigned to it.
 
 * **Guard**: guards are additional conditions that may be applied to patterns, that otherwise couldn't be expressed using pattern syntax. Typical example might be a function call to determine a type of a value for example.
 
@@ -129,9 +129,9 @@ in
 As shown in this example, the `let` expression consists of two parts. Each line consists of an alias or a pattern on the left side, and the expression to evaluate on the right side. The result of this expression is then matched to the pattern on the left side, or simply assigned to an alias, depending on what is on the left side. The result of this `let` expression is the result of the `expression2` expression. If a pattern on the left is not matched on any of the lines, the whole `let` expression raises a `:nomatch` exception. One line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
-Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage](index.md#example), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
+Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage](/usecase#example), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
 * the do not depend on each other (do not use names provided by other aliases in the same batch)
-* they return a runtime Promise (IO operations, or results of the [`async`](stdlib/functions/async.md) function)
+* they return a runtime Promise (IO operations, or results of the [`async`](/stdlib/functions/async) function)
 
 When both conditions are met, Yatta can safely execute them concurrently, avoiding unnecessary blocking and effectively speeding up the program execution.
 
@@ -148,7 +148,7 @@ do
 end
 ```
 
-Note that unlike the case with the `let` expression, the order of executed expressions is guaranteed to be exactly the same as the order in which they are written. This is the main use-case of the `do` expression: to allow strict ordering of execution. It does not matter whether an expression returns a run-time level Promise (such as one that can be created by a IO call or by using the [`async`](stdlib/functions/async.md) function), the order defined in this expression is always guaranteed to be maintained.
+Note that unlike the case with the `let` expression, the order of executed expressions is guaranteed to be exactly the same as the order in which they are written. This is the main use-case of the `do` expression: to allow strict ordering of execution. It does not matter whether an expression returns a run-time level Promise (such as one that can be created by a IO call or by using the [`async`](/stdlib/functions/async) function), the order defined in this expression is always guaranteed to be maintained.
 
 ## **`case` expression**: pattern matching
 `case` expression is used for pattern matching on an expression. Each line of this expression contains a pattern followed by an arrow `->` and an expression that is evaluated in case of a successful pattern match. Patterns are tried in the order in which they are specified. The default case can be denoted by an underscore `_` pattern that always evaluates as true.
@@ -190,11 +190,11 @@ with contextManager as alias
 end
 ```
 
-The `contextManager` expression must return a [context manager](resource-management.md#context-managers). If no alias is used, then the context manager is not meant to be interacted with directly. An example for this would be an [STM](stdlib/stm.md) transaction, that just needs to be present but there is no need to directly refer to it.
+The `contextManager` expression must return a [context manager](resource-management.md#context-managers). If no alias is used, then the context manager is not meant to be interacted with directly. An example for this would be an [STM](/stdlib/stm) transaction, that just needs to be present but there is no need to directly refer to it.
 
-Alternatively, if the alias is specified, as usually case with files, then the file creted in the `contextManager` part of this expression can be directly accessed in `bodyExpression`.
+Alternatively, if the alias is specified, as usually case with files, then the file created in the `contextManager` part of this expression can be directly accessed in `bodyExpression`.
 
-Example that reads all lines using [`File::read_lines`](stdlib/file.md#opening-closing) function:
+Example that reads all lines using [`File::read_lines`](/stdlib/file#opening-closing) function:
 
 ```haskell
 with File::open "File.txt" {:read} as file
@@ -238,7 +238,7 @@ in
 In this case the name of the module does not matter, as the module is assigned to the `test_module` value.
 
 ## **`with` expression**: resource management {: #with-expression}
-`with` expression handles resource management within its scope. It initilizes the scope with a [context manager]({{< relref "resource-management#context-managers" >}}) that is available within the scope its body.
+`with` expression handles resource management within its scope. It initializes the scope with a [context manager](/features/resource-management#context-managers) that is available within the scope its body.
 
 The syntax lookes like this (`as alias` part is optional):
 ```haskell
@@ -247,7 +247,7 @@ with contextManager as alias
 end
 ```
 
-The `contextManager` expression must return a [context manager](resource-management#context-managers). If no alias is used, then the context manager is not meant to be interacted with directly. An example for this would be an [STM](stdlib/stm) transaction, that just needs to be present but there is no need to directly refer to it.
+The `contextManager` expression must return a [context manager](/features/resource-management#context-managers). If no alias is used, then the context manager is not meant to be interacted with directly. An example for this would be an [STM](/stdlib/stm) transaction, that just needs to be present but there is no need to directly refer to it.
 
 Alternatively, if the alias is specified, as usually case with files, then the file creted in the `contextManager` part of this expression can be directly accessed in `bodyExpression`.
 
@@ -400,7 +400,7 @@ Syntax for a generator generating a dictionary:
 {key = val * 2 | key = val <- {:a = 1, :b = 2, :c = 3} if val % 2 == 0}  # generator with a condition, so the result is {:b = 4}
 ```
 
-Generators are an easy an convenient way to transform built-in collections. They are, however, themselves implemented using the reusable [Transducers](stdlib/transducers.md) module. For example, a set generator without using the above mentioned syntax "sugar" could look like:
+Generators are an easy an convenient way to transform built-in collections. They are, however, themselves implemented using the reusable [Transducers](/stdlib/transducers) module. For example, a set generator without using the above mentioned syntax "sugar" could look like:
 
 ```haskell
 Transducers::filter \val -> val < 0 (\-> 0, \acc val -> acc + val, \acc -> acc * 2)

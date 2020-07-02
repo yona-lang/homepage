@@ -30,8 +30,8 @@ Value returnValue = context.eval("yatta", "5 + 3");
 ### Type-conversions, constructing objects and calling methods
 Yatta API for calling code in Java consists of two modules:
 
-* [`Java`](stdlib/java.md) - for instantiating new objects, checking instance type of an object, raising Java exceptions and casting Java objects
-* [`java\Types`](stdlib/java/types.md) - for converting Yatta types to Java types (for example Yatta contains only 64bit integers, so they need to be converted to Java integers when calling a Java method that expects an integer. Same for double vs float.
+* [`Java`](/stdlib/java) - for instantiating new objects, checking instance type of an object, raising Java exceptions and casting Java objects
+* [`java\Types`](/stdlib/java/types) - for converting Yatta types to Java types (for example Yatta contains only 64bit integers, so they need to be converted to Java integers when calling a Java method that expects an integer. Same for double vs float.
 
 Simple example to create a BigInteger in Yatta and then check that it is actually of `BigInteger` type:
 
@@ -46,7 +46,7 @@ in Java::instanceof instance type
 Yatta has only one integer type (which is actually Java long) and only one float type (Java double). Yatta cannot safely map these into Java types automatically.
 As Yatta is dynamically typed, there is simply no way for Yatta to know that you're trying to call a Java function expecting an integer and not a long for example.
 
-Therefore such automatic conversions do not really happen, and when calling a Java function, expecting a Java integer, you must manually convert this using `Java\Types::to_int`, or `Java\Types::to_float` respectively. More details in the documentation for that [module](stdlib/java/types.md).
+Therefore such automatic conversions do not really happen, and when calling a Java function, expecting a Java integer, you must manually convert this using `Java\Types::to_int`, or `Java\Types::to_float` respectively. More details in the documentation for that [module](/stdlib/java/types).
 
 On the opposite side of the contract - returning Java values to Yatta, following conversions are applied:
 * `null` is represented as `()`

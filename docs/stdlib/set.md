@@ -6,7 +6,7 @@ tags: stdlib
 This module provides functions for manipulating Sets. Sets are immutable data structure containing unique elements.
 
 ## Usage
-There is function `Set::empty` to create a new empty set. Sets support special [operators](/docs/operators.md) for adding elements or operations typical for sets, such as unions or intersections etc.
+There is function `Set::empty` to create a new empty set. Sets support special [operators](/features/operators.md) for adding elements or operations typical for sets, such as unions or intersections etc.
 
 ### Folding a set
 Folding a set is a process of iterating over its values while producing one result value. An example of a folding function could be a sum function, that iterates over all elements and adds them up, producing a single result.

@@ -3,9 +3,9 @@ title: "Release Notes"
 ---
 
 ## Yatta 0.8.1: TBD  {: #yatta-0.8.1}
-* [resource management](resource-management.md)
-* [STM](stdlib/stm.md) module
-* [Regexp](stdlib/regexp.md) module
+* [resource management](/features/resource-management)
+* [STM](/stdlib/stm) module
+* [Regexp](/stdlib/regexp) module
 
 ## IDEA Plugin 0.0.1 - June 17th 2020  {: #idea-plugin-0.0.1}
 * first public release available from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14536-yatta-language)

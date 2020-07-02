@@ -6,7 +6,7 @@ tags: stdlib
 This module provides functions for manipulating Sequences. Sequences are bi-directional, immutable data structures with constant time random element lookup. Strings in Yatta are specially optimized sequences of UTF-8 characters.
 
 ## Usage
-There is a special syntax to create an empty sequence: `[]` or `""`. Sequences support special [operators](/docs/operators.md) for adding elements or joining with other sequences.
+There is a special syntax to create an empty sequence: `[]` or `""`. Sequences support special [operators](/features/operators.md) for adding elements or joining with other sequences.
 
 ### Folding a sequence
 Folding a sequence is a process of iterating over its values while producing one result value. An example of a folding function could be a sum function, that iterates over all elements and adds them up, producing a single result.
@@ -54,7 +54,7 @@ Seq::split [1, 2, 3, 4, 5] 2
 will yield `([1, 2], [3, 4, 5])`
 
 ### Checking whether a sequence is a string
-Function `is_string` checks whether a sequence is a string. It can be useful in [guard expressions](/docs/syntax.md) for example.
+Function `is_string` checks whether a sequence is a string. It can be useful in [guard expressions](/features/syntax.md) for example.
 ```haskell
 Seq::is_string "hello"
 ```
