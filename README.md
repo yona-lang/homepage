@@ -1,5 +1,9 @@
 Using MkDocs: https://www.mkdocs.org/user-guide/writing-your-docs/
 
+# Clone repo
+
+    git clone --recurse-submodules git@github.com:yatta-lang/homepage.git
+
 # Installing dependencies
 
     pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin
