@@ -6,7 +6,7 @@ tags: stdlib
 This module provides functions for reading, writing and otherwise manipulating files.
 
 ## Usage
-All file access is non-blocking and asynchronous. Behind the courtains, file operations use [AsynchronousFileChannel](https://docs.oracle.com/en/java/javase/11api/java.base/java/nio/channels/AsynchronousFileChannel.html).
+All file access is non-blocking and asynchronous. Behind the courtains, file operations use [AsynchronousFileChannel](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/channels/AsynchronousFileChannel.html).
 Files can be worked in either text or binary mode. Text mode anticipates that file is encoded in UTF-8 encoding, whereas binary file may contain any contents.
 
 ### Opening a file
