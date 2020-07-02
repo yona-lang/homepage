@@ -18,7 +18,7 @@ Opening file for reading, in a text mode, for example:
 fh = File::open "test.txt" {:read}
 ```
 
-Available modes (for further details, refer to Java's [StandardOpenOption](https://docs.oracle.com/en/java/javase/11api/java.base/java/nio/file/StandardOpenOption.html)):
+Available modes (for further details, refer to Java's [StandardOpenOption](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/StandardOpenOption.html)):
 
 | Mode | Description |
 | ---- | ----------- |
