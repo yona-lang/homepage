@@ -73,12 +73,12 @@ Since Yatta is a strictly evaluated language, meaning that arguments are evaluat
 
 ```bash
 let
-    lambda = \-> println :hello
+    lambda = \-> IO::println :hello
 in
     do_something_with \-> lambda  # instead of do_something_with lambda
 ```
 
-Then the `do_something_with` function will obtain its argument as a function and not a result of `println :hello` function (that would be `:hello` btw).
+Then the `do_something_with` function will obtain its argument as a function and not a result of `IO::println :hello` function (that would be `:hello` btw).
 
 ### Pipes and operator precedence
 Since Yatta is an ML-style language and, unlike many C-like languages, it does not use parentheses to denote a function application, it can become unclear which expressions are arguments of which function. Take for the following example:
@@ -112,7 +112,7 @@ These are all equivalent expression and it is up to the programmer's preference 
 ```haskell
 Seq::random 10
 |> Seq::take 5
-|> println
+|> IO::println
 ```
 
 ## **`let` expression**: defining local aliases / pattern matching in the scope of evaluated expression {: #let-expression}
@@ -296,7 +296,7 @@ in
 To access a field from a record instance a dot syntax is used:
 
 ```bash
-println new_car.model  # will print A6
+IO::println new_car.model  # will print A6
 ```
 
 Pattern matching on records is very easy as well:

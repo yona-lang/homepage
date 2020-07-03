@@ -22,7 +22,7 @@ Pattern matching on tuples:
 ```haskell
 case expr of
     (:ok, value)      -> do_something value  # value contains the second element of the tuple
-    (:error, message) -> println message
+    (:error, message) -> IO::println message
 end
 ```
 
@@ -144,7 +144,7 @@ This slightly with an inlined module definition more complex example will produc
 ```ruby
 do
     (one, _) = (1, :unused)
-    println one
+    IO::println one
     two = 2
     one + two
 end

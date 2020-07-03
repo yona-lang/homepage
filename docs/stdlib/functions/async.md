@@ -7,5 +7,5 @@ Function `async` executes a function asynchronously. It expects a lambda and thi
 
 ## Usage:
 ```haskell
-async (\-> println :hello)
+async (\-> IO::println :hello)
 ```

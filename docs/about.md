@@ -67,7 +67,7 @@ values = File::read_lines values_file
 
 4. Finally, the whole let expression is now a Promise, so run the final expression whenever it is ready:
 ```haskell
-Seq::zip keys values |> Dict::from_seq |> println
+Seq::zip keys values |> Dict::from_seq |> IO::println
 ```
 Yatta automatically chains runtime Promises as needed and, more than that, it "unwraps" them whenever they are complete, so the runtime doesn't actually get bloated with propagating Promises all over the place. As soon as a Promise is computed, it becomes just a regular value again.
 

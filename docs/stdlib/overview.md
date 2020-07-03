@@ -6,7 +6,6 @@ tags: stdlib
 Following functions and modules are provided as part of the standard library.
 
 # Functions
-* [println](functions/println.md) - Prints a value to the standard output
 * [sleep](functions/sleep.md) - Suspends computation by specified duration
 * [timeout](functions/timeout.md) - Either the provided value is computed by the specified timeout, or a `:timeout` exception is raised
 * [async](functions/async.md) - Executes the lambda asynchronously
@@ -16,12 +15,11 @@ Following functions and modules are provided as part of the standard library.
 * [float](functions/float.md) - Converts any value to float
 * [eval](functions/eval.md) - Dynamically evaluates the string as a Yatta expression
 * [never](functions/never.md) - Function that is never completed
-* [read](functions/read.md) - Reads a single character from standard input
-* [readln](functions/readln.md) - Reads a line from the standard input
 
 
 # Modules
 * [Types](types.md) - contains functions for checking a type of a value
+* [IO](io.md) - standard input/output actions
 * [Seq](seq.md) - contains functions for manipulating sequences
 * [Set](set.md) - contains functions for manipulating sets
 * [Dict](dict.md) - contains functions for manipulating dictionaries
