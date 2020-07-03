@@ -22,10 +22,10 @@ Follow our [**blog**](https://functional.blog) for release announcements and oth
 ## Goals & Priorities
 - **Excellent readability** - simple syntax, few keywords, virtually no boilerplate.
 - **Few types of expressions** - `module`, `import`, function(function does not need a keyword, it is defined by a name and arguments - patterns), `case`, `if`, `let`, `do`, `with` and `try`/`catch` + `raise`.
-- **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. [**Modules**](features/syntax.md#module-expression) are first level values and can be created dynamically.
+- **Simple module system** - ability to expose functions for use in other modules, and ability to import them from other modules. [**Modules**](syntax.md#module-expression) are first level values and can be created dynamically.
 - **Single expression principle** - program is always one expression - this enables simpler evaluation and syntax, allows writing simple scripts as well as complex applications.
 - **Powerful and efficient** built-in **immutable** data structures with full support for [**pattern matching**](features/pattern-matching), including Sequence, Dictionary and Set.
-- Custom data types representable as [**records**](features/syntax#records).
+- Custom data types representable as [**records**](syntax#records).
 - Built-in runtime level **non-blocking asynchronous IO**.
 - [**Simple concurrency**](about#execution-model), built-into runtime, no need for any abstractions such as Futures, Channels or Actors.
 - **Advanced concurrency** provided by built-in [**Software Transactional Memory** (STM)](stdlib/stm) module.
