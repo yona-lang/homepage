@@ -3,15 +3,18 @@ title: "Overview"
 description: Yatta is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
-[![Actions Status](https://github.com/yatta-lang/yatta/workflows/Release/badge.svg)](https://github.com/yatta-lang/yatta/actions)
-![Test](https://github.com/yatta-lang/yatta/workflows/Test/badge.svg)
-![Publish Docker Image](https://github.com/yatta-lang/yatta/workflows/Publish%20Docker%20Image/badge.svg)
+[![Latest Release](https://img.shields.io/github/v/release/yatta-lang/yatta)](github.com/yatta-lang/yatta/releases/latest/)
+[![Docker Hub](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
+[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
+![License](https://img.shields.io/github/license/yatta-lang/yatta)
+[![Follow me on Twitter](https://img.shields.io/twitter/follow/kovariadam?style=social)](https://twitter.com/kovariadam)
 
 [![Gitter](https://badges.gitter.im/yattalang/community.svg)](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Google group : yatta-lang](https://img.shields.io/badge/yatta--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yatta-lang)
 
-[![Docker Hub](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
-[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
+[![Actions Status](https://github.com/yatta-lang/yatta/workflows/Release/badge.svg)](https://github.com/yatta-lang/yatta/actions)
+![Test](https://github.com/yatta-lang/yatta/workflows/Test/badge.svg)
+![Publish Docker Image](https://github.com/yatta-lang/yatta/workflows/Publish%20Docker%20Image/badge.svg)
 
 Yatta is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yatta puts a strong focus on code readability.
 
@@ -38,17 +41,17 @@ Follow our [**blog**](https://functional.blog) for release announcements and oth
 ## Status
 The Yatta language is currently in active development. The release plan is:
 
-* [alpha version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. Focus of this release was:
+* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/1](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/1)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. Focus of this release was:
     - [x] stabilized syntax, semantics and runtime
     - [x] automated the release process
     - [x] estabilish website and documentation
     - [x] spread the word and allow users to "play" with the language and the interpreter
     - [x] collect some feedback from interested users
-* [beta version](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/2](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/2)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
     - [x] finished STM implementation together with a generic `with` [expression](https://github.com/yatta-lang/yatta/issues/33)
     - [ ] significantly grow the standard library
     - [ ] focus on optimizations in the interpreter
-* version 1 - final - 2021. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/3](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/3)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
     - [ ] stabilize standard library
     - [ ] focus on tooling, such as package management, editor/IDE support
     - [ ] provide a high-quality REPL
