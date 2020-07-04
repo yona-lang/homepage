@@ -4,7 +4,7 @@ description: Yatta is a modern take on a dynamic and polyglot general-purpose pr
 ---
 
 [![Latest Release](https://img.shields.io/github/v/release/yatta-lang/yatta)](github.com/yatta-lang/yatta/releases/latest/)
-[![Docker Hub](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
+[![Docker Build](https://img.shields.io/docker/cloud/build/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
 [![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
 ![License](https://img.shields.io/github/license/yatta-lang/yatta)
 [![Follow me on Twitter](https://img.shields.io/twitter/follow/kovariadam?style=social)](https://twitter.com/kovariadam)
@@ -14,7 +14,6 @@ description: Yatta is a modern take on a dynamic and polyglot general-purpose pr
 
 [![Actions Status](https://github.com/yatta-lang/yatta/workflows/Release/badge.svg)](https://github.com/yatta-lang/yatta/actions)
 ![Test](https://github.com/yatta-lang/yatta/workflows/Test/badge.svg)
-![Publish Docker Image](https://github.com/yatta-lang/yatta/workflows/Publish%20Docker%20Image/badge.svg)
 
 Yatta is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yatta puts a strong focus on code readability.
 
