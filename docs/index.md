@@ -7,7 +7,7 @@ description: Yatta is a modern take on a dynamic and polyglot general-purpose pr
 [![Docker Pulls](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
 [![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
 ![License](https://img.shields.io/github/license/yatta-lang/yatta)
-[![Follow me on Twitter](https://img.shields.io/twitter/follow/kovariadam?style=social)](https://twitter.com/kovariadam)
+<a href="https://twitter.com/kovariadam?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @kovariadam</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 [![Gitter](https://badges.gitter.im/yattalang/community.svg)](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Google group : yatta-lang](https://img.shields.io/badge/yatta--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yatta-lang)
