@@ -34,7 +34,7 @@ Obtaining the `data` from the context manager tuple can be done using function `
 Using this context manager in a simple test program coul look like:
 
 ```haskell
-with context\Local::new "test_context" (\ctx_mgr cb -> (cb) * 2) identity 4 as test_context
+with context\Local::new "test_context" (\ctx_mgr cb -> (cb) * 2) 4 as test_context
     # name:  "test_context"
     # wrapper: \cm -> (context\Local::get_data cm) * 2
     # data:  4
