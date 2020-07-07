@@ -23,7 +23,7 @@ Yatta provides fully transparent runtime system that integrates asynchronous non
 This approach provides several benefits to languages as opposed to having these features provided via external libaries, mainly that such library would have to be adopted by other libraries/frameworks in order to be usable and it would still impose additional boilerplate simply because libraries cannot typically change language syntax/semantics. This is why Yatta provides these features from day one, built into language syntax and semantics and therefore it is always available to any program without any external dependencies. At the same time, putting these features directly on the language/runtime level allows for additional optimizations that could otherwise be tricky or impossible.
 
 ### Example
-Following example will be used as a case study into Yatta's execution model.
+Following example will be used as a case study into Yatta's execution model. Note that this example code actually will not work from Yatta [0.8.1](/getting_started/release-notes#yatta-0.8.1), because of the [resource management](features/resource-management.md) feature, but it is still a good example for understanding the underlying evaluation model. Make sure to read the next section after this one to see how this program needs to be written in more recent Yatta versions. The same properties of the evaluation still apply!
 
 ```haskell
 let

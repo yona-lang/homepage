@@ -7,6 +7,7 @@ Module `STM` provides access to a built-in Software Transactional Memory data st
 
 ## Usage
 There may be multiple instances of STM created in Yatta, and they live completely independently to each other. Any error raised by functions in this module raise an exception of type `:stm`.
+Any expression inside the body of a [context manager](/features/resource-management.md#context-managers) will have implicit access to the transaction from its scope.
 
 ### Instantiating a new STM
 In order to use an STM for read/write operations, one must first create the STM itself. Reference to the STM instance will be used by all other functions. STM itself is of a special [type](/features/data-types.md) `stm`.
@@ -46,14 +47,6 @@ with STM::write_tx stm
 end
 ```
 
-### Updating the STM
-Updating a value held by a var must take place inside a transaction. Function `run` takes a 0-argument lambda, which is the actual code executed inside a transaction. The return value of the `run` function is the return value of the provided lambda.
-
-Example:
-```haskell
-STM::run stm (\-> withdraw)
-```
-
 Note that passing a zero argument lambda [requires](/features/syntax.md#anonymous-functions-aka-lambdas) it to be wrapped in another lambda, this is to prevent its eager evaluation.
 
 ### Reading a value of a var
@@ -81,24 +74,28 @@ STM::protect var
 ```
 
 ## Complete example
-The following example shows a simple program for withdrawing money from an account. 10 currency is withdrawn 100 times concurrently:
+The following example shows a simple program for withdrawing money from an account. 10 currency is withdrawn 100 times:
 
 ```haskell
 let
     stm = STM::new
     balance = STM::var stm 1000f
 
-    withdraw = async \-> let old_balance = (STM::read balance) in STM::write balance (old_balance - 10f)
-
     max_iterations = 100
 
     run = \i -> case i of
       x | x >= max_iterations -> STM::read balance
       x -> do
-          STM::transaction stm false (\-> withdraw)
-          run (i + 1)
-          end
+        with STM::write_tx stm
+            let
+                old_balance = STM::read balance
+            in
+                STM::write balance (old_balance - 10f)
         end
+        
+        run (i + 1)
+      end
+    end
 in
     run 0
 ```

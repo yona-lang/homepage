@@ -33,15 +33,8 @@ Available modes (for further details, refer to Java's [StandardOpenOption](https
 | `:sync` | Requires that every update to the file's content or metadata be written synchronously to the underlying storage device. |
 | `:dsync` | Requires that every update to the file's content be written synchronously to the underlying storage device. |
 
-### Closing a file
-File should be closed when no longer used. This ensures that file may no longer be used, after calling this function. This function expects a file handle and returns a `()`.
-
-```haskell
-File::close fh
-```
-
 ### Opening and closing files with [context managers](/features/resource-management#context-managers) {#opening-closing}
-While it is possible to manually close a file, it is recommended to take advantege of file [context managers](/docs/resource-management.md#context-managers) instead. They provide error handling, such that the user does not need to worry about properly closing files in all situations. Using files as context managers is really simple, since it requires nothing more than the `open` function, that already returns a context manager!
+[Context managers](/docs/resource-management.md#context-managers) are the recommended way of dealing with files. They provide error handling, such that the user does not need to worry about properly closing files in all situations. Using files as context managers is really simple, since it requires nothing more than the `open` function, that already returns a context manager!
 
 Therefore using files in this way is as simple as writing:
 ```haskell
@@ -67,7 +60,7 @@ new_fh = File::seek fh position
 ```
 
 ### Creating a temporary file
-In order to create a temporary file in a system temp folder, pass a prefix (string), suffix (string) and a set of file modes. Function returns a new handle, with a newly created temporary file, opened using the specified file modes.
+In order to create a temporary file in a system temp folder, pass a prefix (string), suffix (string) and a set of file modes. Function returns a new handle, with a newly created temporary file, opened using the specified file modes. The file will be kept after use, unless `:delete_on_close` option was specified.
 
 ```haskell
 fh = File::make_temp "prefix" "suffix" {:write}
