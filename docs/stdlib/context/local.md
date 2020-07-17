@@ -7,8 +7,9 @@ This module provides functions for implementing user-level [context managers](/f
 
 ## Creating a new custom context manager
 Function `new` takes four arguments and builds a new context manager tuple:
+
 * `name` is the default name of the alias, used as a key in the local context dictionary.
-* `wrapper` wrapper: 1-arg function - takes `context_manager` and a callback that is called from within this wrapper function and of which result is returned as a result of this wrapper. The wrapper can perfrom initialization and finalization of resources around calling the callback.
+* `wrapper` wrapper: 2-arg function - the context manager tuple and a callback that is called from within this wrapper function and of which result is returned as a result of this wrapper. The wrapper can perfrom initialization and finalization of resources around calling the callback.
 * `data` is the actual data, such as transaction object, file object or whatever other resource data to be managed by the context manager.
 
 This example builds a simple test context manager that multiplies its `data` within its `wrapper` function, provided that `4` is its initial `data`.

@@ -14,20 +14,17 @@ Module [`context\Local`](/stdlib/context/local) provides functions for implement
 
 Context managers store their data in a local dictionary, so that they can be used from any threads (this is transparent for programmers, who need not to be aware of this actually).
 
-Context manager is a quadruple of `(name, enter, leave, data)`, where:
+Context manager is a tripple of `(name, wrapper, data)`, where:
 
 * `name` is the default name of the alias, used as a key in the local context dictionary.
-* `enter` is a function taking context manager tuple as its argument, returning just the `data` portion.
-* `leave` is a function taking context manager tuple as its argument, and its return value is ignored. Its purpose is handling side finalization effects only.
+* `wrapper` wrapper is a 2-arg function - taking the context manager tuple and a callback that is called from within this wrapper function and of which result is returned as a result of this wrapper. The wrapper can perfrom initialization and finalization of resources around calling the callback.
 * `data` is the actual data, such as transaction object, file object or whatever other resource data to be managed by the context manager.
 
 ### Lifecycle of Context Managers
 Context manager is executed in this order:
 
-* the context manager tuple is passed to `enter` function
-* result of the `enter` function is stored in the local context dictionary
-* body expression is executed
-* `leave` function is executed with the using a context manager tuple containing the result of `enter` function as its only argument
+* the context manager tuple is stored to the local context dictionary
+* the `wrapper` function is executed, expected to initialize necessary resources, then call the callback passed into this function and finally resources get disposed after they've been used
 * if body expression raises an exception, the `leave` function is still called regardless
 
 ### Handling errors
