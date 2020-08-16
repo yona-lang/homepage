@@ -56,3 +56,25 @@ Dict::from_seq [(1, 4), (2, 5), (3, 6)]
 ```
 
 Will return `{1 = 4, 2 = 5, 3 = 6}`.
+
+
+### Turning a dictionary to a sequence of tuples
+Function `entries` is the inverse operation of the `from_seq` function and it returns a sequence of tuples `(key, value)` for the provided dictionary.
+
+Example:
+```haskell
+Dict::entries {1 = 4, 2 = 5, 3 = 6}
+```
+
+Will return `[(1, 4), (2, 5), (3, 6)]`.
+
+
+### Getting keys from the dictionary
+Function `keys` returns a set of all keys for the provided dictionary.
+
+Example:
+```haskell
+Dict::keys {1 = 4, 2 = 5, 3 = 6}
+```
+
+Will return `{1, 2, 3}`.

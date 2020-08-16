@@ -40,3 +40,14 @@ Function `len` returns a length of a set:
 ```haskell
 length = Set::len {1, 2, 3}
 ```
+
+
+### Turning a set to a sequence
+Function `to_seq` constructs a sequence containing elemtents of the given set. Elements in this sequence are in no particular order.
+
+Example:
+```haskell
+Set::to_seq {1, 2, 3}
+```
+
+Will return `[1, 2, 3]`.

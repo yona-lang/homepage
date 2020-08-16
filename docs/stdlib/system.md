@@ -59,3 +59,17 @@ System::pipeline [
     ["rev"]
 ]
 ```
+
+
+### Locating the language home
+Function `language_home` returns a string representing an absolute path to the home directory of the language installation within the GraalVM.
+
+For example:
+```haskell
+System::language_home |> println
+```
+
+could print something like:
+```
+/Library/Java/JavaVirtualMachines/graalvm-ee-java11-20.1.0/Contents/Home/languages/yatta
+```
