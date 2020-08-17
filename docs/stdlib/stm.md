@@ -6,7 +6,7 @@ tags: stdlib
 Module `STM` provides access to a built-in Software Transactional Memory data structure, which can be thought of as a mutable map, safe from concurrent access.
 
 ## Usage
-There may be multiple instances of STM created in Yatta, and they live completely independently to each other. Any error raised by functions in this module raise an exception of type `:stm`.
+There may be multiple instances of STM created in Yona, and they live completely independently to each other. Any error raised by functions in this module raise an exception of type `:stm`.
 Any expression inside the body of a [context manager](/features/resource-management.md#context-managers) will have implicit access to the transaction from its scope.
 
 ### Instantiating a new STM
@@ -18,7 +18,7 @@ stm = STM::new
 ```
 
 ### Creating a var - key for some value in the STM
-STM uses concepts of vars, which are references to the STM, and they are actually their own special type in Yatta.
+STM uses concepts of vars, which are references to the STM, and they are actually their own special type in Yona.
 
 Creating a new var:
 ```haskell

@@ -3,7 +3,7 @@ title: "Seq"
 tags: stdlib
 ---
 
-This module provides functions for manipulating Sequences. Sequences are bi-directional, immutable data structures with constant time random element lookup. Strings in Yatta are specially optimized sequences of UTF-8 characters.
+This module provides functions for manipulating Sequences. Sequences are bi-directional, immutable data structures with constant time random element lookup. Strings in Yona are specially optimized sequences of UTF-8 characters.
 
 ## Usage
 There is a special syntax to create an empty sequence: `[]` or `""`. Sequences support special [operators](/features/operators.md) for adding elements or joining with other sequences.

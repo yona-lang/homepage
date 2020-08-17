@@ -2,9 +2,9 @@
 title: "Pattern Matching"
 ---
 
-Pattern matching is the most important feature for control flow in Yatta. It allows simple, short way of specifying patterns for the built in types, specifically:
+Pattern matching is the most important feature for control flow in Yona. It allows simple, short way of specifying patterns for the built in types, specifically:
 
-Pattern matching, in combination with recursion are the basis of the control flow in Yatta.
+Pattern matching, in combination with recursion are the basis of the control flow in Yona.
 
 ## Scalar values - integer, float, byte, character, boolean, symbol
 Pattern matching for scalar values is super simple. The pattern looks is the value itself, for example:
@@ -33,7 +33,7 @@ Pattern matching on records is described in the section about Records.
 The underscore pattern `_` will match any value.
 
 ## Sequence & reverse sequence, multiple head & tails & their combinations in patterns
-Sequence is a biderctional structure and can be easily pattern matched from either left or right side. Yatta allows pattern matching on more than a single element as well:
+Sequence is a biderctional structure and can be easily pattern matched from either left or right side. Yona allows pattern matching on more than a single element as well:
 
 ### Matching sequence on the beginning
 ```haskell
@@ -45,7 +45,7 @@ end
 ```
 This code will result in `2`.
 
-Yatta allows matching on more than just one element in the beginning:
+Yona allows matching on more than just one element in the beginning:
 ```haskell
 case [1, 2, 3, 4] of
     1 -| 2 -| []   -> 2
@@ -119,7 +119,7 @@ end
 This will result in `2`.
 
 ## "As" patterns
-Sometimes it can be useful to name a collection (sequence, set or dictionary) or a record in a pattern for later use. For example when matching on a record type, but ignoring all the fields. This can be done using `@` syntax in Yatta:
+Sometimes it can be useful to name a collection (sequence, set or dictionary) or a record in a pattern for later use. For example when matching on a record type, but ignoring all the fields. This can be done using `@` syntax in Yona:
 
 ```haskell
 let mod = module TestMod exports testfun as

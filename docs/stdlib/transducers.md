@@ -3,7 +3,7 @@ title: "Transducers"
 tags: stdlib
 ---
 
-Transducers are composable transformations of reducing functions. They provide a way to implement high order operations such as `map`, `filter`, `take` or `drop` in a way that they are independent from the collection they operate on. This way, these operations are defined only once, for all collections in Yatta, specifically for `Seq`, `Set` and `Dict` and in fact, they can be used for custom user-built data collections, provided that it exposes a `reduce` function.
+Transducers are composable transformations of reducing functions. They provide a way to implement high order operations such as `map`, `filter`, `take` or `drop` in a way that they are independent from the collection they operate on. This way, these operations are defined only once, for all collections in Yona, specifically for `Seq`, `Set` and `Dict` and in fact, they can be used for custom user-built data collections, provided that it exposes a `reduce` function.
 
 Transducer constructor is a function that takes a transducer as an argument and returns a new transducer.
 
@@ -28,7 +28,7 @@ And the transducer is custructed by function `Transducers::filter` which takes t
 The second argument here is another transducer actually. This is how transducers are composed. Transducer can either be created by using a predefined one in the `Transducers` module, or created manually as a tripple, as described in the next section.
 
 ## Implementing a transducer
-Transducer in Yatta is a tripple, with following elements:
+Transducer in Yona is a tripple, with following elements:
 * initial state - is the initial state of the accumulator of the step function
 * step function - is a function of two arguments - accumulator and an element, returning a new state of the accumulator
 * complete function - is a function of one argument - the final state of accumulator, returning the final value of the `reduce` function
@@ -45,6 +45,6 @@ in
     (init, new_step, complete)
 ```
 
-Source code for all transducers available in Yatta is available [here](https://github.com/yatta-lang/yatta/blob/master/language/lib-yatta/Transducers.yatta).
+Source code for all transducers available in Yona is available [here](https://github.com/yona-lang/yona/blob/master/language/lib-yona/Transducers.yona).
 
 Note that transducers are actually used in [generators](/features/syntax.md#generators) as well, they are just a syntax sugar for them for the built-in collections.

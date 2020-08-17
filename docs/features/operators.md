@@ -3,7 +3,7 @@ title: "Operators"
 ---
 
 ## Binary Operators
-These are all the operations supposorted by Yatta's binary operators. Combinations of other data types than listed here will result in a `TypeError`.
+These are all the operations supposorted by Yona's binary operators. Combinations of other data types than listed here will result in a `TypeError`.
 
 | Operator | Left operand | Right operand | Description |
 | -------- | ------------ | ------------- | ----------- |
@@ -100,5 +100,5 @@ These are all the operations supposorted by Yatta's binary operators. Combinatio
 
 
 ## Unary operators
-In addition to the binary operators in the table above, Yatta supports negation operator `~` which can be applied 
+In addition to the binary operators in the table above, Yona supports negation operator `~` which can be applied 
 either to integer or boolean values and will result in bitwise complement, or boolean negation respectively.

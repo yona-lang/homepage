@@ -13,7 +13,7 @@ Following functions and modules are provided as part of the standard library.
 * [str](functions/str.md) - Converts any value to its string representation
 * [int](functions/int.md) - Converts any number to to int
 * [float](functions/float.md) - Converts any value to float
-* [eval](functions/eval.md) - Dynamically evaluates the string as a Yatta expression
+* [eval](functions/eval.md) - Dynamically evaluates the string as a Yona expression
 * [never](functions/never.md) - Function that is never completed
 
 

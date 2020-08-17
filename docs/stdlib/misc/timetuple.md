@@ -3,7 +3,7 @@ title: "Duration specified as a tuple"
 tags: stdlib misc
 ---
 
-Duration in Yatta is specified as a tuple, of a time unit symbol and a number representing the amount of that time unit.
+Duration in Yona is specified as a tuple, of a time unit symbol and a number representing the amount of that time unit.
 
 Available time unit symbols:
 * `:millis`

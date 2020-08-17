@@ -1,23 +1,23 @@
 ---
 title: "Overview"
-description: Yatta is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
+description: Yona is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
-[![Latest Release](https://img.shields.io/github/v/release/yatta-lang/yatta)](github.com/yatta-lang/yatta/releases/latest/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/akovari/yatta)](https://hub.docker.com/r/akovari/yatta)
-[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
-![License](https://img.shields.io/github/license/yatta-lang/yatta)
+[![Latest Release](https://img.shields.io/github/v/release/yona-lang/yona)](github.com/yona-lang/yona/releases/latest/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/akovari/yona)](https://hub.docker.com/r/akovari/yona)
+[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yona-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yona-language)
+![License](https://img.shields.io/github/license/yona-lang/yona)
 <a href="https://twitter.com/kovariadam?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @kovariadam</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[![Gitter](https://badges.gitter.im/yattalang/community.svg)](https://gitter.im/yattalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Google group : yatta-lang](https://img.shields.io/badge/yatta--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yatta-lang)
+[![Gitter](https://badges.gitter.im/yonalang/community.svg)](https://gitter.im/yonalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Google group : yona-lang](https://img.shields.io/badge/yona--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yona-lang)
 
-[![Actions Status](https://github.com/yatta-lang/yatta/workflows/Release/badge.svg)](https://github.com/yatta-lang/yatta/actions)
-![Test](https://github.com/yatta-lang/yatta/workflows/Test/badge.svg)
+[![Actions Status](https://github.com/yona-lang/yona/workflows/Release/badge.svg)](https://github.com/yona-lang/yona/actions)
+![Test](https://github.com/yona-lang/yona/workflows/Test/badge.svg)
 
-Yatta is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yatta puts a strong focus on code readability.
+Yona is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yona puts a strong focus on code readability.
 
-Yatta abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires a conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
+Yona abstract users from dealing with non-blocking asynchronous computations and parallelism. While these features are commonly available in other languages nowadays, they are almost exclusively non-native solutions that come in forms of libraries or frameworks and are difficult to integrate with existing codebases. On top of that, dealing with these additional libraries requires a conscious effort of the programmer to choose/learn/integrate these libraries into their mindset when writing new code.
 
 Follow our [**blog**](https://functional.blog) for release announcements and other reading materials.
 
@@ -35,25 +35,25 @@ Follow our [**blog**](https://functional.blog) for release announcements and oth
 - **Powerful resource management** - automatically [**manage resources**](features/resource-management) using built-in context manager infrastructure.
 
 !!! tip
-    Read more about the philosophy behind Yatta [here](about.md).
+    Read more about the philosophy behind Yona [here](about.md).
 
 ## Status
-The Yatta language is currently in active development. The release plan is:
+The Yona language is currently in active development. The release plan is:
 
-* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/1](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/1)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. The focus of this release was:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/1](https://img.shields.io/github/milestones/progress/yona-lang/yona/1)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. The focus of this release was:
     - [x] stabilized syntax, semantics and runtime
     - [x] automated the release process
     - [x] estabilish website and documentation
     - [x] spread the word and allow users to "play" with the language and the interpreter
     - [x] collect some feedback from interested users
-* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/2](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/2)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/2](https://img.shields.io/github/milestones/progress/yona-lang/yona/2)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
     - [x] finished [STM](stdlib/stm) implementation
     - [x] resource management: `with` [expression](features/resource-management)
     - [x] [regular expressions](stdlib/regexp)
-    - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14536-yatta-language)
+    - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14536-yona-language)
     - [ ] significantly grow the standard library
     - [ ] focus on optimizations in the interpreter
-* [![https://img.shields.io/github/milestones/progress/yatta-lang/yatta/3](https://img.shields.io/github/milestones/progress/yatta-lang/yatta/3)](https://github.com/yatta-lang/yatta/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
     - [ ] stabilize standard library
     - [ ] focus on tooling, such as package management, editor/IDE support
     - [ ] provide a high-quality REPL

@@ -9,7 +9,7 @@ This module provides important functions for [interoperability with Java](/featu
 This modules allows Java executing specific code, such as instantiating a class, casting to another type, checking whether a value is an instance of a class, or throwing Java exceptions.
 
 ### Representing a Java type
-Function `type` takes a string - a fully qualified name of a Java class and creates a Yatta representation of given class. This value can be used to create new instances of this type.
+Function `type` takes a string - a fully qualified name of a Java class and creates a Yona representation of given class. This value can be used to create new instances of this type.
 
 Example:
 

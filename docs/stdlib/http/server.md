@@ -60,4 +60,4 @@ server = http\Server::create "127.0.0.1" port max_connections
         |> http\Server::start
 ```
 
-A full example showing use of both HTTP server and client in an application for distributed PI computation can be seen in this [test case](https://github.com/yatta-lang/yatta/blob/master/language/tests/DistributedPiCalculation.yatta).
+A full example showing use of both HTTP server and client in an application for distributed PI computation can be seen in this [test case](https://github.com/yona-lang/yona/blob/master/language/tests/DistributedPiCalculation.yona).

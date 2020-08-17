@@ -6,7 +6,7 @@ tags: stdlib
 Function `never` is a function that is never completed.
 
 ## Usage
-Because of Yatta's non-blocking and asynchronous nature, it may not be obvious how to write a program that never completes. One common usecase here would be when writing an HTTP server, then a program should never stop. Since the HTTP server itself is a non-blocking function, after it is created, Yatta program would just end, without using this function. Additionally, this function doesn't take any CPU time.
+Because of Yona's non-blocking and asynchronous nature, it may not be obvious how to write a program that never completes. One common usecase here would be when writing an HTTP server, then a program should never stop. Since the HTTP server itself is a non-blocking function, after it is created, Yona program would just end, without using this function. Additionally, this function doesn't take any CPU time.
 
 ```haskell
 do

@@ -2,7 +2,7 @@ Using MkDocs: https://www.mkdocs.org/user-guide/writing-your-docs/
 
 # Clone repo
 
-    git clone --recurse-submodules git@github.com:yatta-lang/homepage.git
+    git clone --recurse-submodules git@github.com:yona-lang/homepage.git
 
 # Installing dependencies
 

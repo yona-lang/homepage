@@ -2,7 +2,7 @@
 title: "Data Types"
 ---
 
-Yatta is dynamically typed language, meaning that types are checked during runtime. Values in Yatta are represented using following data types:
+Yona is dynamically typed language, meaning that types are checked during runtime. Values in Yona are represented using following data types:
 
 * boolean - `true` or `false`
 * integer - 64 bit number

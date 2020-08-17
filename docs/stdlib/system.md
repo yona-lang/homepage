@@ -10,7 +10,7 @@ This module provides functions for interacting with the system environment, such
 Function `args` allows the program to access the process arguments, so for example running a script such as:
 
 ```bash
-yatta ./script.yatta -h
+yona ./script.yona -h
 ```
 
 would result in:
@@ -30,7 +30,7 @@ pid = System::pid
 Function `get_env` returns an environment variable as a string or a `()` if such environment variable is not present.
 
 ```haskell
-yatta_path = System::get_env "YATTA_PATH"
+yona_path = System::get_env "YONA_PATH"
 ```
 
 ### Running an external process
@@ -71,5 +71,5 @@ System::language_home |> println
 
 could print something like:
 ```
-/Library/Java/JavaVirtualMachines/graalvm-ee-java11-20.1.0/Contents/Home/languages/yatta
+/Library/Java/JavaVirtualMachines/graalvm-ee-java11-20.1.0/Contents/Home/languages/yona
 ```

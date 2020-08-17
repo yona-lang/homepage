@@ -1,17 +1,17 @@
 ---
 title: "Syntax"
 ---
-Programs in Yatta consist always of evaluation of a single expression. In fact, any Yatta program consists of exactly one expression.
+Programs in Yona consist always of evaluation of a single expression. In fact, any Yona program consists of exactly one expression.
 
 The syntax is intentionally very minimalistic and inspired by languages such as SML or Haskell. There are only a handful of keywords, however it is not as flexible in naming as Haskell for example.
 
-Yatta programs have the ambition to be easily readable. Custom operators with names consisting of [symbols](features/data-types.md) alone are not that useful when reading a program for the first time. This is why Yatta does not support custom operators named by [symbols](features/data-types.md) only. Supported operators are listed [here](features/operators.md).
+Yona programs have the ambition to be easily readable. Custom operators with names consisting of [symbols](features/data-types.md) alone are not that useful when reading a program for the first time. This is why Yona does not support custom operators named by [symbols](features/data-types.md) only. Supported operators are listed [here](features/operators.md).
 
-Yatta does not have indentation specific parsing rules, but it does require new line at certain locations, which are noted in each individual expression descriptions.
+Yona does not have indentation specific parsing rules, but it does require new line at certain locations, which are noted in each individual expression descriptions.
 
 Comments are denoted by the `#` character and everything that follows this character until the end of line (`\n` or `\r\n`) is considered a comment and ignored.
 
-The source code of a Yatta program must be a valid UTF-8 text file.
+The source code of a Yona program must be a valid UTF-8 text file.
 
 ## **Terminology**
 These are some common terms and phrases used throughout these texts explained to a user unfamiliar with functional concepts:
@@ -29,7 +29,7 @@ These are some common terms and phrases used throughout these texts explained to
 * **String interpolation**: process of substituting values of variables into placeholders in a string. For instance, if there a template for saying hello to a person like "Hello {parson}, nice to meet you!", where the placeholder should be replaced with an actual person's name. This process is called string interpolation.
 
 ## **Functions**: definition and application
-Functions in Yatta are defined in a very short and concise form. They may take arguments, which the function can pattern match on, and one function can be defined using multiple arguments. Function names must start with a lowercase letter, followed by any letters, numbers or underscores.
+Functions in Yona are defined in a very short and concise form. They may take arguments, which the function can pattern match on, and one function can be defined using multiple arguments. Function names must start with a lowercase letter, followed by any letters, numbers or underscores.
 
 A simple function to calculate a factorial can be written for example this way:
 
@@ -49,10 +49,10 @@ Which means that there is an additional condition for the `n` value to be greate
 
 Note that function arguments may actually be full patterns, not just argument names. Patterns are described in the section named *Pattern Matching*.
 
-Yatta additionally supports non-linear patterns, meaning that if a pattern contains the same name multiple times, than this name is required to match the same value so that the pattern would match. This can be handy when checking for one value to be present in multiple places/arguments without having to explicitly write a guard that would ensure the equality.
+Yona additionally supports non-linear patterns, meaning that if a pattern contains the same name multiple times, than this name is required to match the same value so that the pattern would match. This can be handy when checking for one value to be present in multiple places/arguments without having to explicitly write a guard that would ensure the equality.
 
 ### **Anonymous functions**: aka lambdas
-Since functions are first-class citizens in Yatta, it is necessary to provide means of passing functions as arguments, and also to define them without giving them a name. The following syntax is used in this case:
+Since functions are first-class citizens in Yona, it is necessary to provide means of passing functions as arguments, and also to define them without giving them a name. The following syntax is used in this case:
 
 ```bash
 \argument_one argument_two -> argument_one argument_two  # lambda function for summing its arguments
@@ -69,7 +69,7 @@ So for example calling a `factorial` would look simply like this:
 factorial 5
 ```
 
-Since Yatta is a strictly evaluated language, meaning that arguments are evaluated before calling the function (as opposed to a lazy language, where arguments are only evaluated when actually used by the called function), there is one situation to be careful about and that is passing lambda functions of zero arguments as arguments to functions. This would be evaluated before actually calling the function. If there are no side-effects happening in the lambda, it might be perfectly fine, however if the lambda must be passed as a lambda, it needs to be wrapped into another lambda at the call-site, such as for example:
+Since Yona is a strictly evaluated language, meaning that arguments are evaluated before calling the function (as opposed to a lazy language, where arguments are only evaluated when actually used by the called function), there is one situation to be careful about and that is passing lambda functions of zero arguments as arguments to functions. This would be evaluated before actually calling the function. If there are no side-effects happening in the lambda, it might be perfectly fine, however if the lambda must be passed as a lambda, it needs to be wrapped into another lambda at the call-site, such as for example:
 
 ```bash
 let
@@ -81,7 +81,7 @@ in
 Then the `do_something_with` function will obtain its argument as a function and not a result of `IO::println :hello` function (that would be `:hello` btw).
 
 ### Pipes and operator precedence
-Since Yatta is an ML-style language and, unlike many C-like languages, it does not use parentheses to denote a function application, it can become unclear which expressions are arguments of which function. Take for the following example:
+Since Yona is an ML-style language and, unlike many C-like languages, it does not use parentheses to denote a function application, it can become unclear which expressions are arguments of which function. Take for the following example:
 
 ```haskell
 Seq::take 5 Seq::random 10
@@ -133,7 +133,7 @@ Note that the order of execution of the alias/pattern lines is not strictly sequ
 * the do not depend on each other (do not use names provided by other aliases in the same batch)
 * they return a runtime Promise (IO operations, or results of the [`async`](/stdlib/functions/async) function)
 
-When both conditions are met, Yatta can safely execute them concurrently, avoiding unnecessary blocking and effectively speeding up the program execution.
+When both conditions are met, Yona can safely execute them concurrently, avoiding unnecessary blocking and effectively speeding up the program execution.
 
 ## **`do` expression**: sequencing side effects {: #do-expression}
 The `do` expression is used to define a sequence of side effecting expressions. This expression is very similar to the `let` expression in the sense that it allows defining aliases and patterns, however, it doesn't have a separate expression that would be used as a result of this expression. Instead the result of the last line is used as the result.
@@ -203,7 +203,7 @@ end
 ```
 
 ## **module expression**
-`module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - in this case, the file must take the name of the module + `.yatta`. Also, see section about [module loader](features/module-loader.md) for details regarding loading modules.
+`module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - in this case, the file must take the name of the module + `.yona`. Also, see section about [module loader](features/module-loader.md) for details regarding loading modules.
 
 ```haskell
 module package\DemoMmodule 
@@ -263,7 +263,7 @@ end
 Packages are logical units for organizing modules. Modules stored in packages must follow a folder structure which is exactly the same as the package path.
 
 ### Records
-New data structures in Yatta can be implemented simply by using tuples. However, as tuples grow in number of elements, it may become useful to name those elements rather than always matching on a particular n-th element. To do so, Yatta provides `records`.
+New data structures in Yona can be implemented simply by using tuples. However, as tuples grow in number of elements, it may become useful to name those elements rather than always matching on a particular n-th element. To do so, Yona provides `records`.
 
 Records are essentially named tuples with names for each element and can be used to refer to a particular element by that name. Records exist within the scope of a module and cannot be imported by or exported to other modules. Modules are meant to provide an interface via functions alone.
 
@@ -308,7 +308,7 @@ order_car any_car@Car = order_elsewhere any_car  # the whole record_instance is 
 ```
 
 ## **`import` expression**: importing functions from other modules
-Normally, it is not necessary to import modules, as it is often the case in many other languages. Functions from another modules can be called without explicitly declaring them as imported. However, Yatta has a special `import` expression (and as such it returns the value of the expression followed by the `in` keyword) that allows importing functions from modules and in that way create aliases for otherwise fully qualified names.
+Normally, it is not necessary to import modules, as it is often the case in many other languages. Functions from another modules can be called without explicitly declaring them as imported. However, Yona has a special `import` expression (and as such it returns the value of the expression followed by the `in` keyword) that allows importing functions from modules and in that way create aliases for otherwise fully qualified names.
 
 ```bash
 import
@@ -323,9 +323,9 @@ Note that importing functions from multiple modules is possible, they just have 
 See the section about [module loader](features/module-loader.md) for more details regarding loading modules.
 
 ## **`raise`, `try`/`catch` expressions**: raising and catching exceptions
-Yatta is not a pure language, therefore it allows raising exceptions. Exceptions in Yatta are represented as a tuple of a symbol and a message. Message can be empty, if not provided as an argument to the keyword/function `raise`.
+Yona is not a pure language, therefore it allows raising exceptions. Exceptions in Yona are represented as a tuple of a symbol and a message. Message can be empty, if not provided as an argument to the keyword/function `raise`.
 
-Exceptions in Yatta consist of three components. First component, is the type of the exception, represented as a symbol. The second component is a string description of the exception - an error message. Last component is the stacktrace which is appended by the runtime automatically.
+Exceptions in Yona consist of three components. First component, is the type of the exception, represented as a symbol. The second component is a string description of the exception - an error message. Last component is the stacktrace which is appended by the runtime automatically.
 
 Raising an exception can be accomplished by the `raise` expression:
 
@@ -345,8 +345,8 @@ end
 ```
 
 ## **Loops**: recursion and generators
-Yatta is a functional language with immutable data types and no variables. This means that imperative constructs for loops, such as `while` or `for` cannot be used.
-Instead, iteration is normally achieved via recursion. Yatta is able to optimize tail-recursive function calls, so they would not stack overflow.
+Yona is a functional language with immutable data types and no variables. This means that imperative constructs for loops, such as `while` or `for` cannot be used.
+Instead, iteration is normally achieved via recursion. Yona is able to optimize tail-recursive function calls, so they would not stack overflow.
 
 A typical Python solution using mutation might look like this:
 
@@ -359,7 +359,7 @@ def factorial(n):
     return n
 ```
 
-However, this solution requires mutable variables, which are not present in Yatta. So, an example of a recursive function to calculate factorial in Yatta would be:
+However, this solution requires mutable variables, which are not present in Yona. So, an example of a recursive function to calculate factorial in Yona would be:
 
 ```haskell
 factorial 1 = 1
@@ -410,10 +410,10 @@ Transducers::filter \val -> val < 0 (\-> 0, \acc val -> acc + val, \acc -> acc *
 The description of the Transducer functions can be found in the module itself. Transducers may be combined in order to create more complex transformations. Also, custom collection may implement their version of a `reduce` function that accepts a transducer and reduces the collection as desired.
 
 ## Strings
-Strings in Yatta are technically sequences of UTF-8 characters. Character in Yatta can be written between apostrophes. Working with strings is then no different than working with any other sequence. String literals can be multi-line as well. There is no special syntax for multi-line strings and a single pair of quotes is used to denote all string literals.
+Strings in Yona are technically sequences of UTF-8 characters. Character in Yona can be written between apostrophes. Working with strings is then no different than working with any other sequence. String literals can be multi-line as well. There is no special syntax for multi-line strings and a single pair of quotes is used to denote all string literals.
 
 ### String Interpolation
-Yatta supports string interpolation for convenience in formatting strings. The syntax is as follows:
+Yona supports string interpolation for convenience in formatting strings. The syntax is as follows:
 
 ```
 "this string contains an interpolated {variable}"

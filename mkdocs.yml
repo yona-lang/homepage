@@ -1,4 +1,4 @@
-site_name: Yatta Language
+site_name: Yona Language
 
 theme:
   name: material
@@ -39,8 +39,8 @@ plugins:
       minify_html: true
   - awesome-pages
 
-repo_name: yatta-lang/yatta
-repo_url: https://github.com/yatta-lang/yatta
+repo_name: yona-lang/yona
+repo_url: https://github.com/yona-lang/yona
 
 google_analytics:
   - UA-1855461-3
