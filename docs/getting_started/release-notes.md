@@ -7,6 +7,7 @@ title: "Release Notes"
 * [STM](/stdlib/stm) module
 * [Regexp](/stdlib/regexp) module
 * [IO](/stdlib/io) module now containing `println`, `read` and `readln` functions
+* REPL, with syntax highlighting, autocomplete, history, etc.
 
 ## IDEA Plugin 0.0.1 - June 17th 2020  {: #idea-plugin-0.0.1}
 * first public release available from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14536-yona-language)

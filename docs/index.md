@@ -56,6 +56,6 @@ The Yona language is currently in active development. The release plan is:
 * [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
     - [ ] stabilize standard library
     - [ ] focus on tooling, such as package management, editor/IDE support
-    - [ ] provide a high-quality REPL
+    - [x] provide a high-quality REPL
 
 See the [release notes](getting_started/release-notes.md) for more details.
