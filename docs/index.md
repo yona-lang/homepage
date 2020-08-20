@@ -5,7 +5,7 @@ description: Yona is a modern take on a dynamic and polyglot general-purpose pro
 
 [![Latest Release](https://img.shields.io/github/v/release/yona-lang/yona)](https://github.com/yona-lang/yona/releases/latest/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/akovari/yona)](https://hub.docker.com/r/akovari/yona)
-[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14536-yatta-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14536-yatta-language)
+[![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14917-yona-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14917-yona-language)
 ![License](https://img.shields.io/github/license/yona-lang/yona)
 ![Twitter](https://img.shields.io/twitter/follow/kovariadam?style=social)
 
