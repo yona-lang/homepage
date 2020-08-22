@@ -50,7 +50,7 @@ The Yona language is currently in active development. The release plan is:
     - [x] finished [STM](stdlib/stm) implementation
     - [x] resource management: `with` [expression](features/resource-management)
     - [x] [regular expressions](stdlib/regexp)
-    - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14536-yona-language)
+    - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14917-yona-language)
     - [ ] significantly grow the standard library
     - [ ] focus on optimizations in the interpreter
 * [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
