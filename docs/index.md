@@ -13,7 +13,6 @@ description: Yona is a modern take on a dynamic and polyglot general-purpose pro
 [![Google group : yona-lang](https://img.shields.io/badge/yona--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yona-lang)
 
 [![Actions Status](https://github.com/yona-lang/yona/workflows/Release/badge.svg)](https://github.com/yona-lang/yona/actions)
-![Test](https://github.com/yona-lang/yona/workflows/Test/badge.svg)
 
 Yona is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yona puts a strong focus on code readability.
 
