@@ -4,10 +4,10 @@ title: "Resource Management"
 
 Yona provides a specialized infrastructure for managing resources, including their initialization and finalization, with guaranteed ordering and error handling.
 
-This feature is called **context managers** and it allows for generic, extensible management of local contexts. Context managers are used in conjunction with the [`with` expression](/features/syntax#with-expression).
+This feature is called **context managers** and it allows for generic, extensible management of local contexts. Context managers are used in conjunction with the [`with` expression](/syntax#with-expression).
 
 ## Context Managers  {: #context-managers}
-Context managers provide the necessary gear for dealing with resource management is a structured way, that can be used together with the [`with` expression](/features/syntax#with-expression).
+Context managers provide the necessary gear for dealing with resource management is a structured way, that can be used together with the [`with` expression](/syntax#with-expression).
 They provide a way for Yona to initialize and finalize resources. Resources may be explicitly or implicitly named direct access within the scope of the `with` expression.
 
 Module [`context\Local`](/stdlib/context/local) provides functions for implementing custom context managers. Builtin modules, such as [STM](/stdlib/stm) or [File](/stdlib/file) implement context managers as well.

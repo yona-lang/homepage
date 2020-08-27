@@ -3,6 +3,7 @@ title: "Overview"
 description: Yona is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
+[![Build Status](https://travis-ci.org/yona-lang/yona.svg?branch=master)](https://travis-ci.org/yona-lang/yona)
 [![Latest Release](https://img.shields.io/github/v/release/yona-lang/yona)](https://github.com/yona-lang/yona/releases/latest/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/akovari/yona)](https://hub.docker.com/r/akovari/yona)
 [![IDEA Plugin](https://img.shields.io/jetbrains/plugin/d/14917-yona-language?label=IDEA%20Plugin)](https://plugins.jetbrains.com/plugin/14917-yona-language)
@@ -11,8 +12,6 @@ description: Yona is a modern take on a dynamic and polyglot general-purpose pro
 
 [![Gitter](https://badges.gitter.im/yona/community.svg)](https://gitter.im/yonalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Google group : yona-lang](https://img.shields.io/badge/yona--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yona-lang)
-
-[![Build Status](https://travis-ci.org/yona-lang/yona.svg?branch=master)](https://travis-ci.org/yona-lang/yona)
 
 Yona is a **minimalistic**, **(strongly) dynamically** typed, **parallel** and **non-blocking**, **polyglot**, **strict**, **functional** programming language, with **ML**-like syntax, for the [GraalVM](https://www.graalvm.org/) virtual machine (VM). Yona puts a strong focus on code readability.
 
