@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Yona Language"
 description: Yona is a modern take on a dynamic and polyglot general-purpose programming language with advanced functional programming, automatic concurrency, minimalistic ML-like syntax, strict evaluation, for GraalVM polyglot virtual machine (VM).
 ---
 
