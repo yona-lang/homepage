@@ -34,8 +34,9 @@ You can see Yona releases at GitHub [releases](https://github.com/yona-lang/yona
 
 ### Run yona interpreter
 Yona comes as a GraalVM component, with two executables:
+
 * `yona` - default interpreter, supporting all GraalVM features, such as Polyglot usage, etc.
-* (broken at the moment) `yonanative` - ahead-of-time compiled interpreter that offers faster startup, though may be slower executing longer running programs. Note that `yonanative` currently works only on 64-bit Linux.
+* (unsupported at the moment) `yonanative` - ahead-of-time compiled interpreter that offers faster startup, though may be slower executing longer running programs. Note that `yonanative` currently works only on 64-bit Linux.
 
 Both executables currently accept only a filename as an argument. This file is then executed using the interpreter.
 Optionally, if no file is provided, the interpreter will expect an input on the standard input when ran. Ctrl-D marks the end of the input in this case.
