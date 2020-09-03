@@ -49,6 +49,7 @@ As Yona is dynamically typed, there is simply no way for Yona to know that you'r
 Therefore such automatic conversions do not really happen, and when calling a Java function, expecting a Java integer, you must manually convert this using `Java\Types::to_int`, or `Java\Types::to_float` respectively. More details in the documentation for that [module](/stdlib/java/types).
 
 On the opposite side of the contract - returning Java values to Yona, following conversions are applied:
+
 * `null` is represented as `()`
 * Java array is represented as a sequence
 * Java `int` (32-bit) is represented as a Yona `int` (64-bit)
