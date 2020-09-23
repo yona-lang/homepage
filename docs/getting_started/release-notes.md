@@ -8,6 +8,7 @@ title: "Release Notes"
 * [Regexp](/stdlib/regexp) module
 * [IO](/stdlib/io) module now containing `println`, `read` and `readln` functions
 * REPL, with syntax highlighting, autocomplete, history, etc.
+* GraalVM 20.2.0 is required now, see [installation](/getting_started/installation) page for details
 
 ## IDEA Plugin 0.0.1 - June 17th 2020  {: #idea-plugin-0.0.1}
 * first public release available from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14536-yona-language)
