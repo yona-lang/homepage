@@ -12,7 +12,7 @@ Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14536-yona-language) f
 
 ### Requirements
 * Any OS capable of running [GraalVM](https://www.graalvm.org/getting-started/)
-* GraalVM **20.2.0**
+* GraalVM **20.3.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 * Ensure `PATH` contains your GraalVM root folder + `/bin`
 
@@ -24,7 +24,7 @@ These instructions set up GraalVM, required environment variables and install th
 
 ```bash
 export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$JAVA_HOME/graalvm/bin:$PATH
-wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-linux-amd64-20.2.0.tar.gz
+wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.0/graalvm-ce-java11-linux-amd64-20.3.0.tar.gz
 mkdir $JAVA_HOME && tar -xzf $HOME/jdk.tar.gz -C $JAVA_HOME --strip-components=1
 gu install native-image
 gu install -ur https://github.com/yona-lang/yona/releases/latest/download/yona-component.jar
