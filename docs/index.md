@@ -38,20 +38,20 @@ Follow our [**blog**](https://functional.blog) for release announcements and oth
 ## Status
 The Yona language is currently in active development. The release plan is:
 
-* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/1](https://img.shields.io/github/milestones/progress/yona-lang/yona/1)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) - May 25th 2020. The focus of this release was:
-    - [x] stabilized syntax, semantics and runtime
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/1](https://img.shields.io/github/milestones/progress/yona-lang/yona/1)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22alpha+release%22) May 25th 2020. The focus of this release was:
+    - [x] stabilized syntax, semantics, and runtime
     - [x] automated the release process
-    - [x] estabilish website and documentation
+    - [x] establish website and documentation
     - [x] spread the word and allow users to "play" with the language and the interpreter
     - [x] collect some feedback from interested users
-* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/2](https://img.shields.io/github/milestones/progress/yona-lang/yona/2)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) - 2020/Q3-Q4. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/2](https://img.shields.io/github/milestones/progress/yona-lang/yona/2)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) 2020/Q3-Q4. Focus of this release is:
     - [x] finished [STM](stdlib/stm) implementation
     - [x] resource management: `with` [expression](features/resource-management)
     - [x] [regular expressions](stdlib/regexp)
     - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14917-yona-language)
     - [ ] significantly grow the standard library
     - [ ] focus on optimizations in the interpreter
-* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) - final - 2021. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) final - 2021. Focus of this release is:
     - [ ] stabilize standard library
     - [ ] focus on tooling, such as package management, editor/IDE support
     - [x] provide a high-quality REPL

@@ -6,13 +6,13 @@ title: "Installation"
 The simplest way to use Yona is to run it in a Docker container. Please see the instructions at [Docker Hub](https://hub.docker.com/r/akovari/yona).
 
 ## IDEA Plugin
-Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14536-yona-language) for Yona, which provides syntax highlighting and syntax validation.
+Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14917-yona-language) for Yona, which provides syntax highlighting and syntax validation.
 
 ## Running within local installation of GraalVM
 
 ### Requirements
 * Any OS capable of running [GraalVM](https://www.graalvm.org/getting-started/)
-* GraalVM **20.3.0**
+* GraalVM **21.0.0**
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 * Ensure `PATH` contains your GraalVM root folder + `/bin`
 
@@ -20,11 +20,11 @@ Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14536-yona-language) f
 It is possible to run Yona locally, whether for play purposes or development of new features.
 
 ### Install GraalVM
-These instructions set up GraalVM, required environment variables and install the Yona component into GraalVM.
+These instructions set up GraalVM, required environment variables, and install the Yona component into GraalVM.
 
 ```bash
 export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$JAVA_HOME/graalvm/bin:$PATH
-wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.0/graalvm-ce-java11-linux-amd64-20.3.0.tar.gz
+wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.0.0/graalvm-ce-java11-linux-amd64-21.0.0.tar.gz
 mkdir $JAVA_HOME && tar -xzf $HOME/jdk.tar.gz -C $JAVA_HOME --strip-components=1
 gu install native-image
 gu install -ur https://github.com/yona-lang/yona/releases/latest/download/yona-component.jar
