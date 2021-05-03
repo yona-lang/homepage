@@ -6,15 +6,25 @@ tags: stdlib
 Following functions and modules are provided as part of the standard library.
 
 # Functions
+* [identity](functions/identity.md) - Returns the value provided to it as an argument, without any modification
+* [eval](functions/eval.md) - Dynamically evaluates the string as a Yona expression
+
+## Asynchronous Operation
+* [async](functions/async.md) - Executes the lambda asynchronously
+* [drop](functions/drop.md) - Execute the callback without waiting on its result
+* [never](functions/never.md) - Function that is never completed
 * [sleep](functions/sleep.md) - Suspends computation by specified duration
 * [timeout](functions/timeout.md) - Either the provided value is computed by the specified timeout, or a `:timeout` exception is raised
-* [async](functions/async.md) - Executes the lambda asynchronously
-* [identity](functions/identity.md) - Returns the value provided to it as an argument, without any modification
+
+## Type Manipulations
 * [str](functions/str.md) - Converts any value to its string representation
 * [int](functions/int.md) - Converts any number to to int
 * [float](functions/float.md) - Converts any value to float
-* [eval](functions/eval.md) - Dynamically evaluates the string as a Yona expression
-* [never](functions/never.md) - Function that is never completed
+* [ord](functions/ord.md) - Return integer representation of an ASCII character
+
+## Control Flow
+* [infi](functions/infi.md) - Invoke functions infinite number of times
+* [times](functions/times.md) - Repeat function `n` times
 
 
 # Modules
@@ -35,3 +45,6 @@ Following functions and modules are provided as part of the standard library.
 * [context\Local](context/local.md) - utilities for implementing custom context managers, see [resource management](/features/resource-management.md) for details
 * [STM](stm.md) - Software Transactional Memory
 * [Regexp](regexp.md) - Regular Expressions
+* [Socket\Client](socket/client.md) - TCP Socket Client
+* [Socket\Server](socket/server.md) - TCP Socket Server
+* [Socket\Connection](socket/connection.md) - Socket Connection handling - reading/writing to sockets
