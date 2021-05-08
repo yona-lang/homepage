@@ -202,6 +202,29 @@ with File::open "File.txt" {:read} as file
 end
 ```
 
+### **``with daemon`` expression**: dropping result of a context manager expression
+`with daemon` is a special form of the `with` expression which behaves exactly the same way in relation to the resource management, but the difference is that unlike the standard `with` expression, it does not return the result of its body as the result, it returns a `()` instead. This way, whatever the body is doing, the `with daemon` expression does not need to wait for its completion, but it returns immediately.
+
+This is particularly useful when accepting socket connections. As soon as the socket connection is accepted, this expression will return `()` and the execution of its body is moved to the background. This is how one can easily implement concurrent servers in Yona.
+
+Example using [`Socket::accept`](/stdlib/socket/accept.md) function:
+
+```haskell
+let
+    addr = "127.0.0.1"
+    port = 5555
+
+    accept = \channel ->
+        with daemon socket\Server::accept channel as connection
+            socket\Connection::read_line connection |> socket\Connection::write connection
+        end
+in
+
+with socket\Server::channel addr port as channel
+    infi (\-> accept channel)
+end
+```
+
 ## **module expression**
 `module` is an expression representing a set of records (optional) and functions. A module must export at least one function, others may be private - usable only from functions defined within the same module. Records are always visible only within the same module and may not be exported. A module may be defined as a file - in this case, the file must take the name of the module + `.yona`. Also, see section about [module loader](features/module-loader.md) for details regarding loading modules.
 

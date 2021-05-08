@@ -29,3 +29,10 @@ Context manager is executed in this order:
 
 ### Handling errors
 Whether an exception is raised or not within the context manager execution is not important for its lifecycle. Context managers ensure that proper initialization and finalization of resources always takes place and for this reason they are the recommended way for handling this sort of thing
+
+### Daemon Context Management
+Context managers provide means to manage resources in a consistent and safe way. Just like any other constructions in Yona, the `with` expression produces a return value, that of its body. Sometimes it may be desired not to await this result but still take advantage of the automatic resource management provided by the `with` expression. This is typically the case when the context manager is provided per connection. In this case the calling expression would be limited to handling only one connection at a time.
+
+In these situations it is useful to move the body expression processing to the background and "forget" about it. This can be achieved by putting a `daemon` keyword after the `with` keyword. For more information about the syntax, see the syntax guide for the [`with` expression](/syntax#with-expression).
+
+The result of the `with daemon` expression is therefore `()`, resources will be properly released once the body expression evaluation finishes, nevertheless.
