@@ -10,6 +10,7 @@ title: "Release Notes"
 * Improved REPL experience
 * [Deamon context managers](/features/resource-management#daemon-context-management)
 * GraalVM 21.1.0-java-16 is required now, see [installation](/getting_started/installation) page for details
+* Added ability to "execute" a module that exports a zero argument function called `main`
 
 ## Yona 0.8.1-SNAPSHOT: {: #yona-0.8.1}
 * [resource management](/features/resource-management)
