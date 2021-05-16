@@ -1,4 +1,7 @@
-# Dict
+---
+title: "Dict"
+tags: stdlib
+---
 
 This module provides functions for manipulating Dictionaries. Dictionaries are immutable data structure containing unique pairs of key and value.
 
@@ -9,25 +12,25 @@ There is a special syntax to create an empty dictionary: `{}`. Dictionaries supp
 Folding a dictionary is a process of iterating over its key-value pairs while producing one result value. An example of a folding function could be a sum function, that iterates over all elements and adds all the values up, producing a single result.
 
 Functions `foldl` take 3 arguments:
-* dictionary to fold
 * 2-argument lambda (accumulator, (key, value)) returning a new value of an accumulator
 * initial value of the accumulator
+* dictionary to fold
 
 This example shows how to sum up a dictionary:
 ```haskell
-Dict::fold {'a' = 1, 'b' = 2, 'c' = 3} (\acc (key, value) -> acc + value) 0
+Dict::fold (\acc (key, value) -> acc + value) 0 {'a' = 1, 'b' = 2, 'c' = 3}
 ```
 
 ### Reducing a dictionary
 Reducing a dictionary means applying a [transducer](transducers.md) onto a dictionary. Transducers are a generic, high-level method for implementing operations over a data structure.
 
 Function `reduce` takes 2 arguments:
-* dictionary to reduce
 * transducer
+* dictionary to reduce
 
 Example with a map transducer:
 ```haskell
-Dict::reduce {'a' = 1, 'b' = 2, 'c' = 3} <| Transducers::map \val -> val * 2 (0, \state val -> state + 1, identity)
+Dict::reduce (Transducers::map \val -> val * 2 (0, \state val -> state + 1, identity)) {'a' = 1, 'b' = 2, 'c' = 3}
 ```
 
 This example will produce `12`, as it sums up all the values doubled.

@@ -68,6 +68,7 @@ Following functions and modules are provided as part of the standard library.
 * [context\Local](context/local.md) - utilities for implementing custom context managers, see [resource management](/features/resource-management.md) for details
 * [JSON](json.md) - JSON parser and generator functions
 * [Regexp](regexp.md) - Regular Expressions
+* [Stopwatch](stopwatch.md) - Simple benchmarking utilities
 
 ### Functions
 * [identity](functions/identity.md) - Returns the value provided to it as an argument, without any modification

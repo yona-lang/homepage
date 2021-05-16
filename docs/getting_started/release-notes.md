@@ -2,7 +2,16 @@
 title: "Release Notes"
 ---
 
-## Yona 0.8.1: TBD  {: #yona-0.8.1}
+## Yona 0.8.2-SNAPSHOT: {: #yona-0.8.2}
+* TCP Socket [Client](/stdlib/socket/tcp/client), [Server](/stdlib/socket/tcp/server), [Connection](/stdlib/socket/tcp/connection) modules
+* Updated [Seq](/stdlib/seq), [Set](/stdlib/set) and [Dict](/stdlib/dict) to match Haskell's `fold` and `reduce` interface and also some new functions
+* [Stopwatch](/stdlib/stopwatch) module
+* Benchmarks and examples available in the source repository
+* Improved REPL experience
+* [Deamon context managers](/features/resource-management#daemon-context-management)
+* GraalVM 21.1.0-java-16 is required now, see [installation](/getting_started/installation) page for details
+
+## Yona 0.8.1-SNAPSHOT: {: #yona-0.8.1}
 * [resource management](/features/resource-management)
 * [STM](/stdlib/stm) module
 * [Regexp](/stdlib/regexp) module

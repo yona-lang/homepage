@@ -5,6 +5,9 @@ title: "Installation"
 ## Running as a Docker container:
 The simplest way to use Yona is to run it in a Docker container. Please see the instructions at [Docker Hub](https://hub.docker.com/r/akovari/yona).
 
+!!! warning
+    There is no Docker image for GraalVM 21.1.0-java16 yet, so Yona image cannot be built either.
+
 ## IDEA Plugin
 Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14917-yona-language) for Yona, which provides syntax highlighting and syntax validation.
 
