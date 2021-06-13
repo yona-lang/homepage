@@ -242,9 +242,10 @@ end
 ```
 
 Calling functions from a module is denoted by a double colon:
-```
+
+```haskell
 package\DemoModule::function1
-````
+```
 
 Modules must have capitalized names, while packages are expected to start with a lowercase letter.
 
