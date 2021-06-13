@@ -2,6 +2,11 @@
 title: "Release Notes"
 ---
 
+## IDEA Plugin 0.0.4 - June 13th 2021 {: #idea-plugin-0.0.4}
+- fixed issues with syntax highlighting in string interpolation
+- brace matcher
+- commenter support
+
 ## Yona 0.8.2-SNAPSHOT: {: #yona-0.8.2}
 * TCP Socket [Client](/stdlib/socket/tcp/client), [Server](/stdlib/socket/tcp/server), [Connection](/stdlib/socket/tcp/connection) modules
 * Updated [Seq](/stdlib/seq), [Set](/stdlib/set) and [Dict](/stdlib/dict) to match Haskell's `fold` and `reduce` interface and also some new functions

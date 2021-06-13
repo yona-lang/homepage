@@ -10,6 +10,8 @@ description: Yona is a modern take on a dynamic and polyglot general-purpose pro
 ![License](https://img.shields.io/github/license/yona-lang/yona)
 ![Twitter](https://img.shields.io/twitter/follow/kovariadam?style=social)
 
+<iframe frameborder="none" width="245px" height="48px" src="https://plugins.jetbrains.com/embeddable/install/14917"></iframe>
+
 [![Gitter](https://badges.gitter.im/yona/community.svg)](https://gitter.im/yonalang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Google group : yona-lang](https://img.shields.io/badge/yona--lang-Google%20group-blue)](https://groups.google.com/forum/#!forum/yona-lang)
 
