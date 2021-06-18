@@ -22,6 +22,7 @@ session = http\Client::session {:authenticator = (:password, "username", "passwo
 
 ### Allowed options
 Function `http\Client::session` accepts a dictionary of options and valid options are:
+
 * `authenticator`, which is a triple, currently only password authentication is supported and the triple is of form `(:password, "username", "password")`
 * `follow_redirects`, is one of:
     - `always`: Always redirect
