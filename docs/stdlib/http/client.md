@@ -6,18 +6,22 @@ tags: stdlib
 This module provides a simple HTTP Client built on top of [java.net.http.HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html).
 
 ## Usage
-First you need to create an HTTP session instance, that takes a dictionary with optional settings, such as whether redirects should be followed or an HTTP authentication should be used. This session instance is then used to make HTTP requests.
+Function `session` creates HTTP session context manager. It takes a dictionary with optional settings, such as whether redirects should be followed or an HTTP authentication should be used. This session instance is then used to make HTTP requests.
 
 Example:
 
 ```haskell
-session = http\Client::session {}  # this will create a session without any additional configuration
+with http\Client::session {} as session  # this will create a session without any additional configuration
+    (200, headers, body) = http\Client::get session "https://httpbin.org/basic-auth/test/test" {}
+end
 ```
 
 Another example:
 
 ```haskell
-session = http\Client::session {:authenticator = (:password, "username", "password"), :follow_redirects = :always}  # this will initiate a new session, with additional `authenticator` and `follow_redirects` settings
+with http\Client::session {:authenticator = (:password, "username", "password"), :follow_redirects = :always} as session # this will initiate a new session, with additional `authenticator` and `follow_redirects` settings
+    ...
+end
 ```
 
 ### Allowed options
@@ -40,18 +44,19 @@ This module provides following functions to make HTTP requests:
 (status, headers, body) = http\Client::put session "<url>" {} []  # where the dictionary can be used to pass HTTP headers, and the last argument is request body (empty string in this case)
 ```
 
-All these function require a session object, url string, a dictionary with HTTP headers and `post` and `put` also expect the request body as the last argument. The body can be either a sequence of bytes or a string.
+All these function require a session context manager, url string, a dictionary with HTTP headers and `post` and `put` also expect the request body as the last argument. The body can be either a sequence of bytes or a string.
 
 ### Authorizing a client request
 A complete example using HTTP authorization:
 
 ```haskell
-let
-    session = http\Client::session {:authenticator = (:password, "test", "test")}
-    (200, headers, body) = http\Client::get session "https://httpbin.org/basic-auth/test/test" {}
-    {"user" = user, "authenticated" = true} = JSON::parse body
-in
-    user
+with http\Client::session {:authenticator = (:password, "test", "test")} as session
+    let
+        (200, headers, body) = http\Client::get session "https://httpbin.org/basic-auth/test/test" {}
+        {"user" = user, "authenticated" = true} = JSON::parse body
+    in
+        user
+end
 ```
 
 which uses [httpbin](https://httpbin.org/) testing service to test HTTP authentication.
@@ -60,10 +65,11 @@ which uses [httpbin](https://httpbin.org/) testing service to test HTTP authenti
 Another example to test request headers, using the same service:
 
 ```haskell
-let
-    session = http\Client::session {}
-    (200, headers, body) = http\Client::get session "https://httpbin.org/headers" {:accept = "application/json"}
-    {"headers" = response_headers} = JSON::parse body
-in
-    Dict::lookup response_headers "Accept"
+with http\Client::session {} as session
+    let
+        (200, headers, body) = http\Client::get session "https://httpbin.org/headers" {:accept = "application/json"}
+        {"headers" = response_headers} = JSON::parse body
+    in
+        Dict::lookup response_headers "Accept"
+end
 ```
