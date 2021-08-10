@@ -1,10 +1,29 @@
 site_name: Yona Language
+#strict: true
+use_directory_urls: true
 
 theme:
   name: material
   custom_dir: overrides
   favicon: assets/images/favicon.ico
   logo: assets/images/logo.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
 
 markdown_extensions:
   - codehilite
@@ -41,7 +60,14 @@ plugins:
 
 repo_name: yona-lang/yona
 repo_url: https://github.com/yona-lang/yona
+site_url: http://yona-lang.org/
 
-google_analytics:
-  - UA-1855461-3
-  - auto
+extra:
+  analytics:
+    provider: google
+    property: G-274001518
+  consent:
+    title: Cookie consent
+    description: > 
+      We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+  disqus: yona-lang

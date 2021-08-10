@@ -3,7 +3,7 @@ title: "socket\\tcp\\Connection"
 tags: stdlib
 ---
 
-This module provides non-blocking functions for reading and writing on TCP connections. Connection can be estabilished either by the [Client](../client) or [Server](../server) module.
+This module provides non-blocking functions for reading and writing on TCP connections. Connection can be estabilished either by the [Client](./client) or [Server](./server) module.
 
 ## Usage
 

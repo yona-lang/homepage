@@ -129,7 +129,7 @@ in
 As shown in this example, the `let` expression consists of two parts. Each line consists of an alias or a pattern on the left side, and the expression to evaluate on the right side. The result of this expression is then matched to the pattern on the left side, or simply assigned to an alias, depending on what is on the left side. The result of this `let` expression is the result of the `expression2` expression. If a pattern on the left is not matched on any of the lines, the whole `let` expression raises a `:nomatch` exception. One line can use names defined in previous lines.
 Every alias/pattern must be defined on a new line.
 
-Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage](/usecase#example), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
+Note that the order of execution of the alias/pattern lines is not strictly sequential. Considering the example in the [documentation homepage](/about#example), some aliases can be executed as a single batch, in parallel, provided that two conditions are met:
 * the do not depend on each other (do not use names provided by other aliases in the same batch)
 * they return a runtime Promise (IO operations, or results of the [`async`](/stdlib/functions/async) function)
 

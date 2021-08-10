@@ -50,6 +50,9 @@ Following functions and modules are provided as part of the standard library.
 * [socket\tcp\Client](socket/tcp/client.md) - TCP Socket Client
 * [socket\tcp\Server](socket/tcp/server.md) - TCP Socket Server
 * [socket\tcp\Connection](socket/tcp/connection.md) - Socket Connection handling - reading/writing to sockets
+* [terminal\Colors](terminal/colors.md) - Terminal colors
+* [terminal\colors\Foreground](terminal/colors/foreground.md) - Terminal colors - foreground
+* [terminal\colors\Background](terminal/colors/background.md) - Terminal colors - foreground
 
 
 ## Interoperability

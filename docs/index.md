@@ -46,16 +46,21 @@ The Yona language is currently in active development. The release plan is:
     - [x] establish website and documentation
     - [x] spread the word and allow users to "play" with the language and the interpreter
     - [x] collect some feedback from interested users
-* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/2](https://img.shields.io/github/milestones/progress/yona-lang/yona/2)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) 2020/Q3-Q4. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/2](https://img.shields.io/github/milestones/progress/yona-lang/yona/2)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%22) 2021/Q4. Focus of this release is:
     - [x] finished [STM](stdlib/stm) implementation
     - [x] resource management: `with` [expression](features/resource-management)
     - [x] [regular expressions](stdlib/regexp)
     - [x] Intellij [plugin](https://plugins.jetbrains.com/plugin/14917-yona-language)
     - [ ] significantly grow the standard library
     - [ ] focus on optimizations in the interpreter
-* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) final - 2021. Focus of this release is:
+* [![https://img.shields.io/github/milestones/progress/yona-lang/yona/3](https://img.shields.io/github/milestones/progress/yona-lang/yona/3)](https://github.com/yona-lang/yona/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22beta+release%23) final - 2022. Focus of this release is:
     - [ ] stabilize standard library
     - [ ] focus on tooling, such as package management, editor/IDE support
     - [x] provide a high-quality REPL
 
 See the [release notes](getting_started/release-notes.md) for more details.
+
+<!--
+[Change cookie settings](#__consent){ .md-button }
+-->
+
