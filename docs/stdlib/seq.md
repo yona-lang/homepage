@@ -100,3 +100,11 @@ Returns a string whose value is this string, with all leading and trailing space
 ```haskell
 Seq::trim " hello "  # returns "hello"
 ```
+
+### Flattening a sequence of sequences
+Function `flatten` will flatten a nested sequence containing other sequences into a flat sequence.
+```haskell
+Seq::flatten [[1, 2], [3, [4, 5, [6, 7]]]]
+```
+
+Will produce a new sequence `[1, 2, 3, 4, 5, 6, 7]`.
