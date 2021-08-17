@@ -76,3 +76,7 @@ Following functions and modules are provided as part of the standard library.
 ### Functions
 * [identity](functions/identity.md) - Returns the value provided to it as an argument, without any modification
 
+
+## Time & Date
+### Modules
+* [Time](time.md) - Time related functions

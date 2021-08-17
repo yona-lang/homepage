@@ -5,6 +5,7 @@ title: "Release Notes"
 ## Yona 0.8.3-SNAPSHOT: {: #yona-0.8.3}
 * GraalVM 21.2.0-java-16 is required now, see [installation](/getting_started/installation/) page for details
 * [terminal\\Colors](/stdlib/terminal/colors/), [terminal\\colors\\Background](/stdlib/terminal/colors/background/) and [terminal\\colors\\Foreground](/stdlib/terminal/colors/foreground/): new standard library modules for terminal related functionality
+* [Time](/stdlib/time/): new module for working with Time
 
 ## IDEA Plugin 0.0.4 - June 13th 2021 {: #idea-plugin-0.0.4}
 - fixed issues with syntax highlighting in string interpolation
