@@ -72,6 +72,9 @@ Following functions and modules are provided as part of the standard library.
 * [JSON](json.md) - JSON parser and generator functions
 * [Regexp](regexp.md) - Regular Expressions
 * [Stopwatch](stopwatch.md) - Simple benchmarking utilities
+* [Exception](/stdlib/exception/) - Exception handling related utilities
+* [Random](/stdlib/random/) - Random number generation
+* [Scheduler](/stdlib/scheduler) - Simple task scheduling
 
 ### Functions
 * [identity](functions/identity.md) - Returns the value provided to it as an argument, without any modification

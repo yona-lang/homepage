@@ -346,7 +346,7 @@ Note that importing functions from multiple modules is possible, they just have 
 
 See the section about [module loader](features/module-loader.md) for more details regarding loading modules.
 
-## **`raise`, `try`/`catch` expressions**: raising and catching exceptions
+## **`raise`, `try`/`catch` expressions**: raising and catching exceptions {: #exceptions}
 Yona is not a pure language, therefore it allows raising exceptions. Exceptions in Yona are represented as a tuple of a symbol and a message. Message can be empty, if not provided as an argument to the keyword/function `raise`.
 
 Exceptions in Yona consist of three components. First component, is the type of the exception, represented as a symbol. The second component is a string description of the exception - an error message. Last component is the stacktrace which is appended by the runtime automatically.

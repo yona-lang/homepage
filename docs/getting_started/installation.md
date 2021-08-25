@@ -5,9 +5,6 @@ title: "Installation"
 ## Running as a Docker container:
 The simplest way to use Yona is to run it in a Docker container. Please see the instructions at [Docker Hub](https://hub.docker.com/r/akovari/yona).
 
-!!! warning
-    There is no Docker image for GraalVM 21.2.0-java16 yet, so Yona image cannot be built either.
-
 ## IDEA Plugin
 Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14917-yona-language) for Yona, which provides syntax highlighting and syntax validation.
 
@@ -15,7 +12,7 @@ Set up IDEA [Plugin](https://plugins.jetbrains.com/plugin/14917-yona-language) f
 
 ### Requirements
 * Any OS capable of running [GraalVM](https://www.graalvm.org/getting-started/)
-* GraalVM **21.2.0**
+* GraalVM **21.2.0** - Java 16
 * Ensure `JAVA_HOME` environment variable points to the root of your GraalVM installation
 * Ensure `PATH` contains your GraalVM root folder + `/bin`
 
@@ -49,10 +46,12 @@ Optionally, if no file is provided, the interpreter will expect an input on the 
 ### Interpreter logging
 Logging can be enabled to debug certain types of issues, for example related to module loading. To do so, make sure your interpreter(either `yona` or `yonanative`) is ran with:
 ```bash
-yona --log.yona.yona.runtime.Context.level=CONFIG
+yona --log.yona.level=CONFIG
 ```
 
 or additionally you can try increasing the log level all the way down to `FINE`, `FINER` or even `FINEST`.
+
+Another option is to use `-v` / `--verbose` flag, which switches the log level to `FINE`.
 
 ## Local development setup
 These instructions are for setting up a local development environment. Currently Debian 10 is the only verified platform (though, any Linux that runs GraalVM should in theory work).

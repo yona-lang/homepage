@@ -108,3 +108,16 @@ Seq::flatten [[1, 2], [3, [4, 5, [6, 7]]]]
 ```
 
 Will produce a new sequence `[1, 2, 3, 4, 5, 6, 7]`.
+
+### Joining a sequence of strings with a separator {: #join}
+Function `join` takes a separator string and a sequence of strings to be join with them.
+```haskell
+Seq::join "\n" ["line 1", "line2", "line 3"]
+```
+
+Will produce three lines:
+```
+line 1
+line 2
+line 3
+```

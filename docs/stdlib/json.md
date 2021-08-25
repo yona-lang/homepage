@@ -22,9 +22,11 @@ This program parses the JSON string and returns a Yona dictionary, which is then
 
 Note that JSON has fewer data types, for example it has no representation of symbols. Regarding numbers, Yona first tries to parse them as integers, if that's not possible, it will parse them as floats.
 
+If the parser occurs an invalid input, it throws an exception of type `:json_parser_error`.
+
 This function is implemented as a native builtin in Java, mainly for performance reasons.
 
-### Generating JSON
+### Generating JSON {: #generate}
 Function `generate` is a function of single argument (any Yona value), returning a string containing JSON representation of the passed argument.
 
 This function is actually very simple to understand just by reading its [source code](https://github.com/yona-lang/yona/blob/master/language/lib-yona/JSON.yona) (it's less than 20 lines of code).
