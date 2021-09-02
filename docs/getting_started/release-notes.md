@@ -2,6 +2,13 @@
 title: "Release Notes"
 ---
 
+## IDEA Plugin 0.1.0 - September 3rd 2021 {: #idea-plugin-0.1.0}
+* structure view - showing modules, functions and records
+* navigate to declaration - within module and project
+* create new Yona file from the menu
+* search for functions via global search
+* fixed missing icon for Yona files
+
 ## Yona 0.8.3-SNAPSHOT: {: #yona-0.8.3}
 * GraalVM 21.2.0-java-16 is required now, see [installation](/getting_started/installation/) page for details
 * [terminal\\Colors](/stdlib/terminal/colors/), [terminal\\colors\\Background](/stdlib/terminal/colors/background/) and [terminal\\colors\\Foreground](/stdlib/terminal/colors/foreground/): new standard library modules for terminal related functionality
