@@ -23,8 +23,8 @@ It is possible to run Yona locally, whether for play purposes or development of 
 These instructions set up GraalVM, required environment variables, and install the Yona component into GraalVM.
 
 ```bash
-export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$JAVA_HOME/graalvm/bin:$PATH
-wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.2.0/graalvm-ce-java16-linux-amd64-21.2.0.tar.gz
+export JAVA_HOME=$HOME/jdk PATH=$JAVA_HOME/bin:$JAVA_HOME/graalvm/bin:$PATH GRAALVM_VERSION="21.3.0" GRAALVM_JAVA_VERSION="17"
+wget -O $HOME/jdk.tar.gz https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-java$GRAALVM_JAVA_VERSION-linux-amd64-$GRAALVM_VERSION.tar.gz
 mkdir $JAVA_HOME && tar -xzf $HOME/jdk.tar.gz -C $JAVA_HOME --strip-components=1
 gu install -ur https://github.com/yona-lang/yona/releases/latest/download/yona-component.jar
 ```

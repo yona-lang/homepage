@@ -2,7 +2,7 @@
 title: "Release Notes"
 ---
 
-## IDEA Plugin 0.1.0 - September 3rd 2021 {: #idea-plugin-0.1.0}
+## IDEA Plugin 0.1.0 - September 2nd 2021 {: #idea-plugin-0.1.0}
 * structure view - showing modules, functions and records
 * navigate to declaration - within module and project
 * create new Yona file from the menu
